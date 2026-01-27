@@ -13,19 +13,19 @@
                 extend: {
                     colors: {
                         'primary': {
-                            50: '#eff6ff',
-                            100: '#dbeafe',
-                            200: '#bfdbfe',
-                            300: '#93c5fd',
-                            400: '#60a5fa',
-                            500: '#3b82f6',
-                            600: '#2563eb',
-                            700: '#1d4ed8',
-                            800: '#1e40af',
-                            900: '#1e3a8a',
-                            950: '#172554',
+                            50: '#f0f8ff',
+                            100: '#e1f0ff',
+                            200: '#b8dcff',
+                            300: '#8fc8ff',
+                            400: '#66b3ff',
+                            500: '#023982', // Main primary color
+                            600: '#023175',
+                            700: '#012a68',
+                            800: '#01225b',
+                            900: '#011b4e',
+                            950: '#001438',
                         },
-                        'accent': '#0ea5e9',
+                        'accent': '#0b74ba', // Main accent color
                     }
                 }
             }
@@ -40,7 +40,7 @@
         }
         
         .active-nav {
-            color: #3b82f6 !important;
+            color: #023982 !important;
             font-weight: 600;
         }
         
@@ -51,7 +51,7 @@
             left: 0;
             width: 100%;
             height: 2px;
-            background: linear-gradient(90deg, #3b82f6, #0ea5e9);
+            background: linear-gradient(90deg, #023982, #0b74ba);
         }
         
         .professional-card {
@@ -69,7 +69,7 @@
             left: 0;
             width: 100%;
             height: 3px;
-            background: linear-gradient(90deg, #3b82f6, #0ea5e9);
+            background: linear-gradient(90deg, #023982, #0b74ba);
             transform: scaleX(0);
             transform-origin: left;
             transition: transform 0.4s ease;
@@ -81,13 +81,13 @@
         
         .professional-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15), 0 10px 20px rgba(59, 130, 246, 0.08);
-            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 20px 40px rgba(2, 57, 130, 0.15), 0 10px 20px rgba(2, 57, 130, 0.08);
+            border-color: rgba(2, 57, 130, 0.3);
         }
         
         /* Animated gradient background */
         .gradient-bg {
-            background: linear-gradient(-45deg, #1e3a8a, #1e40af, #1d4ed8, #2563eb);
+            background: linear-gradient(-45deg, #011b4e, #01225b, #012a68, #023175);
             background-size: 400% 400%;
             animation: gradientShift 15s ease infinite;
         }
@@ -101,10 +101,10 @@
         /* Geometric patterns */
         .geometric-pattern {
             background-image: 
-                linear-gradient(30deg, rgba(59, 130, 246, 0.05) 12%, transparent 12.5%, transparent 87%, rgba(59, 130, 246, 0.05) 87.5%, rgba(59, 130, 246, 0.05)),
-                linear-gradient(150deg, rgba(59, 130, 246, 0.05) 12%, transparent 12.5%, transparent 87%, rgba(59, 130, 246, 0.05) 87.5%, rgba(59, 130, 246, 0.05)),
-                linear-gradient(30deg, rgba(59, 130, 246, 0.05) 12%, transparent 12.5%, transparent 87%, rgba(59, 130, 246, 0.05) 87.5%, rgba(59, 130, 246, 0.05)),
-                linear-gradient(150deg, rgba(59, 130, 246, 0.05) 12%, transparent 12.5%, transparent 87%, rgba(59, 130, 246, 0.05) 87.5%, rgba(59, 130, 246, 0.05));
+                linear-gradient(30deg, rgba(2, 57, 130, 0.05) 12%, transparent 12.5%, transparent 87%, rgba(2, 57, 130, 0.05) 87.5%, rgba(2, 57, 130, 0.05)),
+                linear-gradient(150deg, rgba(2, 57, 130, 0.05) 12%, transparent 12.5%, transparent 87%, rgba(2, 57, 130, 0.05) 87.5%, rgba(2, 57, 130, 0.05)),
+                linear-gradient(30deg, rgba(2, 57, 130, 0.05) 12%, transparent 12.5%, transparent 87%, rgba(2, 57, 130, 0.05) 87.5%, rgba(2, 57, 130, 0.05)),
+                linear-gradient(150deg, rgba(2, 57, 130, 0.05) 12%, transparent 12.5%, transparent 87%, rgba(2, 57, 130, 0.05) 87.5%, rgba(2, 57, 130, 0.05));
             background-size: 80px 140px;
             background-position: 0 0, 0 0, 40px 70px, 40px 70px;
         }
@@ -127,14 +127,14 @@
         /* Tech grid lines */
         .tech-grid {
             background-image: 
-                linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+                linear-gradient(rgba(2, 57, 130, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(2, 57, 130, 0.05) 1px, transparent 1px);
             background-size: 50px 50px;
         }
         
         /* Glowing effect */
         .glow-effect {
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(59, 130, 246, 0.1);
+            box-shadow: 0 0 20px rgba(2, 57, 130, 0.3), 0 0 40px rgba(2, 57, 130, 0.1);
         }
         
         /* Pulse animation */
@@ -153,8 +153,8 @@
                 45deg,
                 transparent,
                 transparent 10px,
-                rgba(59, 130, 246, 0.03) 10px,
-                rgba(59, 130, 246, 0.03) 20px
+                rgba(2, 57, 130, 0.03) 10px,
+                rgba(2, 57, 130, 0.03) 20px
             );
         }
         
@@ -163,13 +163,13 @@
             width: 56px;
             height: 56px;
             border-radius: 14px;
-            background: linear-gradient(135deg, #3b82f6, #0ea5e9);
+            background: linear-gradient(135deg, #023982, #0b74ba);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-size: 1.5rem;
-            box-shadow: 0 8px 16px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 8px 16px rgba(2, 57, 130, 0.3);
             position: relative;
         }
         
@@ -178,7 +178,7 @@
             position: absolute;
             inset: -2px;
             border-radius: 16px;
-            background: linear-gradient(135deg, #3b82f6, #0ea5e9);
+            background: linear-gradient(135deg, #023982, #0b74ba);
             opacity: 0.5;
             filter: blur(8px);
             z-index: -1;
@@ -211,9 +211,9 @@
         }
         
         .social-icon:hover {
-            background: rgba(59, 130, 246, 0.3);
+            background: rgba(2, 57, 130, 0.3);
             transform: translateY(-3px);
-            box-shadow: 0 8px 16px rgba(59, 130, 246, 0.2);
+            box-shadow: 0 8px 16px rgba(2, 57, 130, 0.2);
         }
         
         /* Wave SVG */
@@ -279,23 +279,23 @@
                 
                 <!-- Desktop Menu -->
                 <div class="hidden lg:flex space-x-8">
-                    <a href="#home" class="text-gray-700 font-medium hover:text-primary-600 transition duration-300 relative group nav-link">
+                    <a href="#home" class="text-gray-700 font-medium hover:text-primary-500 transition duration-300 relative group nav-link">
                         <span>Home</span>
                         <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-500 to-accent group-hover:w-full transition-all duration-300"></span>
                     </a>
-                    <a href="#about" class="text-gray-700 font-medium hover:text-primary-600 transition duration-300 relative group nav-link">
+                    <a href="#about" class="text-gray-700 font-medium hover:text-primary-500 transition duration-300 relative group nav-link">
                         <span>About</span>
                         <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-500 to-accent group-hover:w-full transition-all duration-300"></span>
                     </a>
-                    <a href="#services" class="text-gray-700 font-medium hover:text-primary-600 transition duration-300 relative group nav-link">
+                    <a href="#services" class="text-gray-700 font-medium hover:text-primary-500 transition duration-300 relative group nav-link">
                         <span>Services</span>
                         <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-500 to-accent group-hover:w-full transition-all duration-300"></span>
                     </a>
-                    <a href="#training" class="text-gray-700 font-medium hover:text-primary-600 transition duration-300 relative group nav-link">
+                    <a href="#training" class="text-gray-700 font-medium hover:text-primary-500 transition duration-300 relative group nav-link">
                         <span>Training</span>
                         <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-500 to-accent group-hover:w-full transition-all duration-300"></span>
                     </a>
-                    <a href="#contact" class="text-gray-700 font-medium hover:text-primary-600 transition duration-300 relative group nav-link">
+                    <a href="#contact" class="text-gray-700 font-medium hover:text-primary-500 transition duration-300 relative group nav-link">
                         <span>Contact</span>
                         <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-500 to-accent group-hover:w-full transition-all duration-300"></span>
                     </a>
@@ -305,11 +305,11 @@
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden lg:hidden mt-3 pb-2">
                 <div class="flex flex-col space-y-3">
-                    <a href="#home" class="text-gray-700 font-medium hover:text-primary-600 transition duration-300 nav-link">Home</a>
-                    <a href="#about" class="text-gray-700 font-medium hover:text-primary-600 transition duration-300 nav-link">About</a>
-                    <a href="#services" class="text-gray-700 font-medium hover:text-primary-600 transition duration-300 nav-link">Services</a>
-                    <a href="#training" class="text-gray-700 font-medium hover:text-primary-600 transition duration-300 nav-link">Training</a>
-                    <a href="#contact" class="text-gray-700 font-medium hover:text-primary-600 transition duration-300 nav-link">Contact</a>
+                    <a href="#home" class="text-gray-700 font-medium hover:text-primary-500 transition duration-300 nav-link">Home</a>
+                    <a href="#about" class="text-gray-700 font-medium hover:text-primary-500 transition duration-300 nav-link">About</a>
+                    <a href="#services" class="text-gray-700 font-medium hover:text-primary-500 transition duration-300 nav-link">Services</a>
+                    <a href="#training" class="text-gray-700 font-medium hover:text-primary-500 transition duration-300 nav-link">Training</a>
+                    <a href="#contact" class="text-gray-700 font-medium hover:text-primary-500 transition duration-300 nav-link">Contact</a>
                 </div>
             </div>
         </div>
@@ -335,7 +335,7 @@
                     <h1 class="text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight">
                         <span class="text-blue-200">Malawian ICT</span> Consulting
                     </h1>
-                    <h2 class="text-xl lg:text-2xl font-semibold text-primary-200 mb-6">
+                    <h2 class="text-xl lg:text-2xl font-semibold text-blue-200 mb-6">
                         Open-Source ERP, Data & AI Solutions
                     </h2>
                     
@@ -346,10 +346,10 @@
                     
                     <!-- Clean CTA buttons -->
                     <div class="flex flex-wrap gap-3">
-                        <a href="#contact" class="px-5 py-2.5 bg-white text-primary-700 font-semibold rounded-lg hover:bg-gray-50 transition duration-300 shadow-md hover:shadow-lg flex items-center">
+                        <a href="#contact" class="px-5 py-2.5 bg-white text-primary-500 font-semibold rounded-lg hover:bg-gray-50 transition duration-300 shadow-md hover:shadow-lg flex items-center">
                             <i class="fas fa-envelope mr-2"></i>Contact Us
                         </a>
-                        <a href="#services" class="px-5 py-2.5 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition duration-300 shadow-md hover:shadow-lg flex items-center">
+                        <a href="#services" class="px-5 py-2.5 bg-primary-500 text-white font-semibold rounded-lg hover:bg-primary-600 transition duration-300 shadow-md hover:shadow-lg flex items-center">
                             <i class="fas fa-cogs mr-2"></i>Our Services
                         </a>
                     </div>
@@ -380,9 +380,9 @@
         
         <div class="container mx-auto relative z-10">
             <div class="text-center mb-12">
-                <span class="inline-block px-4 py-2 bg-primary-50 text-primary-600 rounded-full font-semibold text-sm mb-4">About Us</span>
+                <span class="inline-block px-4 py-2 bg-primary-50 text-primary-500 rounded-full font-semibold text-sm mb-4">About Us</span>
                 <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                    Empowering African Businesses with <span class="text-primary-600">Smart Technology</span>
+                    Empowering African Businesses with <span class="text-primary-500">Smart Technology</span>
                 </h2>
                 <p class="text-gray-600 max-w-3xl mx-auto text-lg">
                     A registered Malawian ICT firm specializing in enterprise systems, open-source technologies, and scalable digital solutions
@@ -403,19 +403,19 @@
                     <div class="space-y-3">
                         <div class="flex items-center text-gray-700">
                             <div class="w-8 h-8 rounded-lg bg-primary-100 flex items-center justify-center mr-3 flex-shrink-0">
-                                <i class="fas fa-check text-primary-600"></i>
+                                <i class="fas fa-check text-primary-500"></i>
                             </div>
                             <span>Fully equipped labs in Zomba for hands-on training</span>
                         </div>
                         <div class="flex items-center text-gray-700">
                             <div class="w-8 h-8 rounded-lg bg-primary-100 flex items-center justify-center mr-3 flex-shrink-0">
-                                <i class="fas fa-check text-primary-600"></i>
+                                <i class="fas fa-check text-primary-500"></i>
                             </div>
                             <span>Joint ventures with ICT firms across Africa</span>
                         </div>
                         <div class="flex items-center text-gray-700">
                             <div class="w-8 h-8 rounded-lg bg-primary-100 flex items-center justify-center mr-3 flex-shrink-0">
-                                <i class="fas fa-check text-primary-600"></i>
+                                <i class="fas fa-check text-primary-500"></i>
                             </div>
                             <span>Sustainable, cost-effective technology solutions</span>
                         </div>
@@ -502,9 +502,9 @@
         
         <div class="container mx-auto relative z-10">
             <div class="text-center mb-12">
-                <span class="inline-block px-4 py-2 bg-primary-50 text-primary-600 rounded-full font-semibold text-sm mb-4">Our Services</span>
+                <span class="inline-block px-4 py-2 bg-primary-50 text-primary-500 rounded-full font-semibold text-sm mb-4">Our Services</span>
                 <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                    Comprehensive <span class="text-primary-600">ICT Solutions</span>
+                    Comprehensive <span class="text-primary-500">ICT Solutions</span>
                 </h2>
                 <p class="text-gray-600 max-w-3xl mx-auto text-lg">
                     Designed for African business environments and organizational needs
@@ -520,9 +520,9 @@
                     <h3 class="text-xl font-bold text-gray-900 mb-3">Enterprise Systems & ERP</h3>
                     <p class="text-gray-600 mb-4">Open-source ERP solutions (Odoo, ERPNext, Dolibarr), customization, and implementation.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-700 text-xs font-medium">Odoo ERP</span>
-                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-700 text-xs font-medium">ERPNext</span>
-                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-700 text-xs font-medium">Dynamics AX</span>
+                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-500 text-xs font-medium">Odoo ERP</span>
+                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-500 text-xs font-medium">ERPNext</span>
+                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-500 text-xs font-medium">Dynamics AX</span>
                     </div>
                 </div>
                 
@@ -534,9 +534,9 @@
                     <h3 class="text-xl font-bold text-gray-900 mb-3">Data, Analytics & AI</h3>
                     <p class="text-gray-600 mb-4">Data analytics, engineering, and practical AI solutions using Metabase, Redash, and Power BI.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-700 text-xs font-medium">Metabase</span>
-                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-700 text-xs font-medium">Redash</span>
-                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-700 text-xs font-medium">Power BI</span>
+                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-500 text-xs font-medium">Metabase</span>
+                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-500 text-xs font-medium">Redash</span>
+                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-500 text-xs font-medium">Power BI</span>
                     </div>
                 </div>
                 
@@ -548,8 +548,8 @@
                     <h3 class="text-xl font-bold text-gray-900 mb-3">IT Support & Infrastructure</h3>
                     <p class="text-gray-600 mb-4">Systems administration, end-user support, network design, and infrastructure optimization.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-700 text-xs font-medium">Linux/Windows</span>
-                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-700 text-xs font-medium">Network Design</span>
+                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-500 text-xs font-medium">Linux/Windows</span>
+                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-500 text-xs font-medium">Network Design</span>
                     </div>
                 </div>
                 
@@ -561,8 +561,8 @@
                     <h3 class="text-xl font-bold text-gray-900 mb-3">AI & Modern Technologies</h3>
                     <p class="text-gray-600 mb-4">AI readiness assessments, use-case identification, process automation, and responsible AI.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-700 text-xs font-medium">AI Assessment</span>
-                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-700 text-xs font-medium">Automation</span>
+                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-500 text-xs font-medium">AI Assessment</span>
+                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-500 text-xs font-medium">Automation</span>
                     </div>
                 </div>
                 
@@ -574,8 +574,8 @@
                     <h3 class="text-xl font-bold text-gray-900 mb-3">Cloud & Open-Source</h3>
                     <p class="text-gray-600 mb-4">Cloud architecture advisory, open-source deployment, and business continuity planning.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-700 text-xs font-medium">Cloud Advisory</span>
-                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-700 text-xs font-medium">Open-Source</span>
+                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-500 text-xs font-medium">Cloud Advisory</span>
+                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-500 text-xs font-medium">Open-Source</span>
                     </div>
                 </div>
                 
@@ -587,8 +587,8 @@
                     <h3 class="text-xl font-bold text-gray-900 mb-3">ICT Strategy & Advisory</h3>
                     <p class="text-gray-600 mb-4">Digital transformation roadmaps, technology governance, and ICT policy development.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-700 text-xs font-medium">Strategy</span>
-                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-700 text-xs font-medium">Governance</span>
+                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-500 text-xs font-medium">Strategy</span>
+                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-500 text-xs font-medium">Governance</span>
                     </div>
                 </div>
             </div>
@@ -601,9 +601,9 @@
         
         <div class="container mx-auto relative z-10">
             <div class="text-center mb-12">
-                <span class="inline-block px-4 py-2 bg-primary-50 text-primary-600 rounded-full font-semibold text-sm mb-4">Training & Labs</span>
+                <span class="inline-block px-4 py-2 bg-primary-50 text-primary-500 rounded-full font-semibold text-sm mb-4">Training & Labs</span>
                 <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                    ICT Training & <span class="text-primary-600">Laboratory Services</span>
+                    ICT Training & <span class="text-primary-500">Laboratory Services</span>
                 </h2>
                 <p class="text-gray-600 max-w-3xl mx-auto text-lg">
                     Hands-on training delivered from our Zomba-based training centre and fully equipped ICT labs
@@ -620,19 +620,19 @@
                     </div>
                     <div class="space-y-3">
                         <div class="flex items-center p-3 bg-primary-50 rounded-xl group hover:bg-primary-100 transition">
-                            <i class="fas fa-server text-primary-600 mr-3 text-lg group-hover:scale-110 transition-transform"></i>
+                            <i class="fas fa-server text-primary-500 mr-3 text-lg group-hover:scale-110 transition-transform"></i>
                             <span class="text-gray-700">Linux & Windows Server Admin</span>
                         </div>
                         <div class="flex items-center p-3 bg-primary-50 rounded-xl group hover:bg-primary-100 transition">
-                            <i class="fas fa-cubes text-primary-600 mr-3 text-lg group-hover:scale-110 transition-transform"></i>
+                            <i class="fas fa-cubes text-primary-500 mr-3 text-lg group-hover:scale-110 transition-transform"></i>
                             <span class="text-gray-700">Odoo ERP Training</span>
                         </div>
                         <div class="flex items-center p-3 bg-primary-50 rounded-xl group hover:bg-primary-100 transition">
-                            <i class="fas fa-database text-primary-600 mr-3 text-lg group-hover:scale-110 transition-transform"></i>
+                            <i class="fas fa-database text-primary-500 mr-3 text-lg group-hover:scale-110 transition-transform"></i>
                             <span class="text-gray-700">Data Analytics & Engineering</span>
                         </div>
                         <div class="flex items-center p-3 bg-primary-50 rounded-xl group hover:bg-primary-100 transition">
-                            <i class="fas fa-robot text-primary-600 mr-3 text-lg group-hover:scale-110 transition-transform"></i>
+                            <i class="fas fa-robot text-primary-500 mr-3 text-lg group-hover:scale-110 transition-transform"></i>
                             <span class="text-gray-700">AI Fundamentals & Applied AI</span>
                         </div>
                     </div>
@@ -647,25 +647,25 @@
                     </div>
                     <div class="space-y-3">
                         <div class="flex items-center p-3 bg-primary-50 rounded-xl group hover:bg-primary-100 transition">
-                            <i class="fas fa-project-diagram text-primary-600 mr-3 text-lg group-hover:scale-110 transition-transform"></i>
+                            <i class="fas fa-project-diagram text-primary-500 mr-3 text-lg group-hover:scale-110 transition-transform"></i>
                             <span class="text-gray-700">Project Management (PRINCE2)</span>
                         </div>
                         <div class="flex items-center p-3 bg-primary-50 rounded-xl group hover:bg-primary-100 transition">
-                            <i class="fas fa-cogs text-primary-600 mr-3 text-lg group-hover:scale-110 transition-transform"></i>
+                            <i class="fas fa-cogs text-primary-500 mr-3 text-lg group-hover:scale-110 transition-transform"></i>
                             <span class="text-gray-700">ICT Governance & Controls</span>
                         </div>
                         <div class="flex items-center p-3 bg-primary-50 rounded-xl group hover:bg-primary-100 transition">
-                            <i class="fas fa-user-tie text-primary-600 mr-3 text-lg group-hover:scale-110 transition-transform"></i>
+                            <i class="fas fa-user-tie text-primary-500 mr-3 text-lg group-hover:scale-110 transition-transform"></i>
                             <span class="text-gray-700">ICT for Non-ICT Professionals</span>
                         </div>
                         <div class="flex items-center p-3 bg-primary-50 rounded-xl group hover:bg-primary-100 transition">
-                            <i class="fas fa-chart-line text-primary-600 mr-3 text-lg group-hover:scale-110 transition-transform"></i>
+                            <i class="fas fa-chart-line text-primary-500 mr-3 text-lg group-hover:scale-110 transition-transform"></i>
                             <span class="text-gray-700">Data Literacy for Managers</span>
                         </div>
                     </div>
                 </div>
                 
-                <div class="professional-card bg-gradient-to-br from-primary-600 to-primary-800 text-white p-6 rounded-2xl">
+                <div class="professional-card bg-gradient-to-br from-primary-500 to-primary-700 text-white p-6 rounded-2xl">
                     <div class="flex items-center mb-6">
                         <div class="w-14 h-14 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center mr-4">
                             <i class="fas fa-shipping-fast text-white text-xl"></i>
@@ -772,7 +772,7 @@
                                     <i class="fas fa-map-marked-alt text-white text-2xl"></i>
                                 </div>
                                 <p class="text-white font-semibold mb-3">Zomba, Malawi</p>
-                                <a href="https://maps.google.com/?q=Zomba,+Malawi" target="_blank" class="inline-flex items-center px-4 py-2 bg-white text-primary-700 rounded-lg hover:bg-gray-100 transition font-semibold text-sm">
+                                <a href="https://maps.google.com/?q=Zomba,+Malawi" target="_blank" class="inline-flex items-center px-4 py-2 bg-white text-primary-500 rounded-lg hover:bg-gray-100 transition font-semibold text-sm">
                                     <i class="fas fa-directions mr-2"></i> Get Directions
                                 </a>
                             </div>
@@ -801,7 +801,7 @@
                         <div>
                             <textarea rows="4" placeholder="Your Message" class="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition"></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-gradient-to-r from-primary-600 to-accent text-white font-bold py-4 rounded-xl hover:opacity-90 transition shadow-lg hover:shadow-xl">
+                        <button type="submit" class="w-full bg-gradient-to-r from-primary-500 to-accent text-white font-bold py-4 rounded-xl hover:opacity-90 transition shadow-lg hover:shadow-xl">
                             Send Message
                             <i class="fas fa-paper-plane ml-2"></i>
                         </button>
