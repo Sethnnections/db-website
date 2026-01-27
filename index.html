@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BD Tech Consulting - Malawian ICT Solutions</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                            950: '#172554',
+                        },
+                        'accent': '#0ea5e9',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .active-nav {
+            color: #3b82f6 !important;
+            font-weight: 600;
+        }
+        
+        .active-nav::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #3b82f6, #0ea5e9);
+        }
+        
+        .professional-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .professional-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #3b82f6, #0ea5e9);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        
+        .professional-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .professional-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15), 0 10px 20px rgba(59, 130, 246, 0.08);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+        
+        /* Animated gradient background */
+        .gradient-bg {
+            background: linear-gradient(-45deg, #1e3a8a, #1e40af, #1d4ed8, #2563eb);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Geometric patterns */
+        .geometric-pattern {
+            background-image: 
+                linear-gradient(30deg, rgba(59, 130, 246, 0.05) 12%, transparent 12.5%, transparent 87%, rgba(59, 130, 246, 0.05) 87.5%, rgba(59, 130, 246, 0.05)),
+                linear-gradient(150deg, rgba(59, 130, 246, 0.05) 12%, transparent 12.5%, transparent 87%, rgba(59, 130, 246, 0.05) 87.5%, rgba(59, 130, 246, 0.05)),
+                linear-gradient(30deg, rgba(59, 130, 246, 0.05) 12%, transparent 12.5%, transparent 87%, rgba(59, 130, 246, 0.05) 87.5%, rgba(59, 130, 246, 0.05)),
+                linear-gradient(150deg, rgba(59, 130, 246, 0.05) 12%, transparent 12.5%, transparent 87%, rgba(59, 130, 246, 0.05) 87.5%, rgba(59, 130, 246, 0.05));
+            background-size: 80px 140px;
+            background-position: 0 0, 0 0, 40px 70px, 40px 70px;
+        }
+        
+        /* Floating particles */
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 20s infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) translateX(100px); opacity: 0; }
+        }
+        
+        /* Tech grid lines */
+        .tech-grid {
+            background-image: 
+                linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        
+        /* Glowing effect */
+        .glow-effect {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(59, 130, 246, 0.1);
+        }
+        
+        /* Pulse animation */
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); opacity: 1; }
+            100% { transform: scale(2); opacity: 0; }
+        }
+        
+        .pulse-ring {
+            animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+        }
+        
+        /* Diagonal stripes */
+        .diagonal-stripes {
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(59, 130, 246, 0.03) 10px,
+                rgba(59, 130, 246, 0.03) 20px
+            );
+        }
+        
+        /* Icon wrapper with gradient */
+        .icon-wrapper {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #3b82f6, #0ea5e9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 8px 16px rgba(59, 130, 246, 0.3);
+            position: relative;
+        }
+        
+        .icon-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #3b82f6, #0ea5e9);
+            opacity: 0.5;
+            filter: blur(8px);
+            z-index: -1;
+        }
+        
+        /* Stat card animation */
+        .stat-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.08));
+        }
+        
+        /* Social icons */
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .social-icon:hover {
+            background: rgba(59, 130, 246, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(59, 130, 246, 0.2);
+        }
+        
+        /* Wave SVG */
+        .wave-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        
+        .wave-bottom svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 60px;
+        }
+        
+        .wave-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+        
+        .wave-top svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 60px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .icon-wrapper {
+                width: 48px;
+                height: 48px;
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm border-b border-gray-100">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-1">
+                    <div class="w-52 h-24 overflow-hidden flex items-center justify-center relative">
+                        <div class="absolute "></div>
+                        <img src="./images/brand.png" alt="BD Tech Consulting Logo" class="w-full h-full object-contain relative z-10">
+                    </div>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="lg:hidden text-gray-700">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex space-x-8">
+                    <a href="#home" class="text-gray-700 font-medium hover:text-primary-600 transition duration-300 relative group nav-link">
+                        <span>Home</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-500 to-accent group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="#about" class="text-gray-700 font-medium hover:text-primary-600 transition duration-300 relative group nav-link">
+                        <span>About</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-500 to-accent group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="#services" class="text-gray-700 font-medium hover:text-primary-600 transition duration-300 relative group nav-link">
+                        <span>Services</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-500 to-accent group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="#training" class="text-gray-700 font-medium hover:text-primary-600 transition duration-300 relative group nav-link">
+                        <span>Training</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-500 to-accent group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="#contact" class="text-gray-700 font-medium hover:text-primary-600 transition duration-300 relative group nav-link">
+                        <span>Contact</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-500 to-accent group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden lg:hidden mt-3 pb-2">
+                <div class="flex flex-col space-y-3">
+                    <a href="#home" class="text-gray-700 font-medium hover:text-primary-600 transition duration-300 nav-link">Home</a>
+                    <a href="#about" class="text-gray-700 font-medium hover:text-primary-600 transition duration-300 nav-link">About</a>
+                    <a href="#services" class="text-gray-700 font-medium hover:text-primary-600 transition duration-300 nav-link">Services</a>
+                    <a href="#training" class="text-gray-700 font-medium hover:text-primary-600 transition duration-300 nav-link">Training</a>
+                    <a href="#contact" class="text-gray-700 font-medium hover:text-primary-600 transition duration-300 nav-link">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- SIMPLIFIED HERO SECTION -->
+<section
+  id="home"
+  class="min-h-screen pt-38 pb-24 px-4 gradient-bg relative overflow-hidden flex items-center"
+>
+        <!-- Subtle background elements -->
+        <div class="absolute inset-0 tech-grid opacity-10"></div>
+        
+        <!-- Minimal floating particles -->
+        <div class="particle" style="width: 3px; height: 3px; left: 15%; animation-delay: 0s;"></div>
+        <div class="particle" style="width: 4px; height: 4px; left: 30%; animation-delay: 3s;"></div>
+        <div class="particle" style="width: 3px; height: 3px; left: 70%; animation-delay: 6s;"></div>
+        
+        <div class="container mx-auto relative z-10">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+                <div class="lg:w-1/2">
+                    <!-- Clean, professional heading -->
+                    <h1 class="text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight">
+                        <span class="text-blue-200">Malawian ICT</span> Consulting
+                    </h1>
+                    <h2 class="text-xl lg:text-2xl font-semibold text-primary-200 mb-6">
+                        Open-Source ERP, Data & AI Solutions
+                    </h2>
+                    
+                    <!-- Simple description -->
+                    <p class="text-blue-100 mb-8 text-sm lg:text-base">
+                        Professional ICT solutions and training services across Africa. We specialize in enterprise systems, open-source technologies, and sustainable digital transformation.
+                    </p>
+                    
+                    <!-- Clean CTA buttons -->
+                    <div class="flex flex-wrap gap-3">
+                        <a href="#contact" class="px-5 py-2.5 bg-white text-primary-700 font-semibold rounded-lg hover:bg-gray-50 transition duration-300 shadow-md hover:shadow-lg flex items-center">
+                            <i class="fas fa-envelope mr-2"></i>Contact Us
+                        </a>
+                        <a href="#services" class="px-5 py-2.5 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition duration-300 shadow-md hover:shadow-lg flex items-center">
+                            <i class="fas fa-cogs mr-2"></i>Our Services
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Clean banner image -->
+                <div class="lg:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="w-full  h-full rounded-lg overflow-hidden ">
+                            <img src="./images/bunner.png" alt="BD Tech Consulting Services" class="w-full h-auto object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Simple wave bottom -->
+        <div class="wave-bottom">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-white"></path>
+            </svg>
+        </div>
+    </section>
+    
+    <!-- About Section (From your code) -->
+    <section id="about" class="py-16 px-4 bg-white relative">
+        <div class="absolute inset-0 diagonal-stripes opacity-50"></div>
+        
+        <div class="container mx-auto relative z-10">
+            <div class="text-center mb-12">
+                <span class="inline-block px-4 py-2 bg-primary-50 text-primary-600 rounded-full font-semibold text-sm mb-4">About Us</span>
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    Empowering African Businesses with <span class="text-primary-600">Smart Technology</span>
+                </h2>
+                <p class="text-gray-600 max-w-3xl mx-auto text-lg">
+                    A registered Malawian ICT firm specializing in enterprise systems, open-source technologies, and scalable digital solutions
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+                <div class="professional-card p-8 rounded-2xl">
+                    <div class="flex items-center mb-6">
+                        <div class="icon-wrapper mr-4">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">Who We Are</h3>
+                    </div>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        BD Tech Consulting is a Malawian-owned ICT consulting and technology services company headquartered in Zomba, Malawi. We deliver enterprise systems implementation, open-source ERP solutions, data and AI services, IT support, and ICT equipment supply.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-center text-gray-700">
+                            <div class="w-8 h-8 rounded-lg bg-primary-100 flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-check text-primary-600"></i>
+                            </div>
+                            <span>Fully equipped labs in Zomba for hands-on training</span>
+                        </div>
+                        <div class="flex items-center text-gray-700">
+                            <div class="w-8 h-8 rounded-lg bg-primary-100 flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-check text-primary-600"></i>
+                            </div>
+                            <span>Joint ventures with ICT firms across Africa</span>
+                        </div>
+                        <div class="flex items-center text-gray-700">
+                            <div class="w-8 h-8 rounded-lg bg-primary-100 flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-check text-primary-600"></i>
+                            </div>
+                            <span>Sustainable, cost-effective technology solutions</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="professional-card bg-gradient-to-br from-primary-50 to-blue-50 p-8 rounded-2xl">
+                    <div class="flex items-center mb-6">
+                        <div class="icon-wrapper mr-4">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">Core Focus</h3>
+                    </div>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        We focus on sustainable, cost-effective technologies that organizations can manage and scale independently.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start bg-white/70 p-4 rounded-xl">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-500 to-accent flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-code text-white text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">Open-Source Expertise</h4>
+                                <p class="text-gray-600 text-sm">Specializing in Odoo, ERPNext, and other open-source platforms</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start bg-white/70 p-4 rounded-xl">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-500 to-accent flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-handshake text-white text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">Joint Ventures</h4>
+                                <p class="text-gray-600 text-sm">Working across Africa with regional ICT firms and partners</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start bg-white/70 p-4 rounded-xl">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-500 to-accent flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-graduation-cap text-white text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">Capacity Building</h4>
+                                <p class="text-gray-600 text-sm">Training and knowledge transfer for sustainable solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mission, Vision, Values -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="professional-card p-6 rounded-2xl text-center group">
+                    <div class="icon-wrapper mx-auto mb-4">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Our Mission</h3>
+                    <p class="text-gray-600">To deliver practical, secure, and affordable ICT solutions while strengthening local technical capacity.</p>
+                </div>
+                
+                <div class="professional-card p-6 rounded-2xl text-center group">
+                    <div class="icon-wrapper mx-auto mb-4">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Our Vision</h3>
+                    <p class="text-gray-600">To be a leading Malawian ICT consulting and training company with a strong footprint across Africa.</p>
+                </div>
+                
+                <div class="professional-card p-6 rounded-2xl text-center group">
+                    <div class="icon-wrapper mx-auto mb-4">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Our Values</h3>
+                    <p class="text-gray-600">Integrity, practical technology adoption, knowledge transfer, and regional collaboration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section (From your code) -->
+    <section id="services" class="py-16 px-4 bg-gradient-to-b from-gray-50 to-white relative">
+        <div class="absolute inset-0 tech-grid opacity-30"></div>
+        
+        <div class="container mx-auto relative z-10">
+            <div class="text-center mb-12">
+                <span class="inline-block px-4 py-2 bg-primary-50 text-primary-600 rounded-full font-semibold text-sm mb-4">Our Services</span>
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    Comprehensive <span class="text-primary-600">ICT Solutions</span>
+                </h2>
+                <p class="text-gray-600 max-w-3xl mx-auto text-lg">
+                    Designed for African business environments and organizational needs
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Service 1 -->
+                <div class="professional-card p-6 rounded-2xl group">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-primary-500 to-accent flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-cubes text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Enterprise Systems & ERP</h3>
+                    <p class="text-gray-600 mb-4">Open-source ERP solutions (Odoo, ERPNext, Dolibarr), customization, and implementation.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-700 text-xs font-medium">Odoo ERP</span>
+                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-700 text-xs font-medium">ERPNext</span>
+                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-700 text-xs font-medium">Dynamics AX</span>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="professional-card p-6 rounded-2xl group">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-primary-500 to-accent flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-chart-line text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Data, Analytics & AI</h3>
+                    <p class="text-gray-600 mb-4">Data analytics, engineering, and practical AI solutions using Metabase, Redash, and Power BI.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-700 text-xs font-medium">Metabase</span>
+                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-700 text-xs font-medium">Redash</span>
+                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-700 text-xs font-medium">Power BI</span>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="professional-card p-6 rounded-2xl group">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-primary-500 to-accent flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-headset text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">IT Support & Infrastructure</h3>
+                    <p class="text-gray-600 mb-4">Systems administration, end-user support, network design, and infrastructure optimization.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-700 text-xs font-medium">Linux/Windows</span>
+                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-700 text-xs font-medium">Network Design</span>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="professional-card p-6 rounded-2xl group">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-primary-500 to-accent flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-robot text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">AI & Modern Technologies</h3>
+                    <p class="text-gray-600 mb-4">AI readiness assessments, use-case identification, process automation, and responsible AI.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-700 text-xs font-medium">AI Assessment</span>
+                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-700 text-xs font-medium">Automation</span>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="professional-card p-6 rounded-2xl group">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-primary-500 to-accent flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-cloud text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Cloud & Open-Source</h3>
+                    <p class="text-gray-600 mb-4">Cloud architecture advisory, open-source deployment, and business continuity planning.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-700 text-xs font-medium">Cloud Advisory</span>
+                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-700 text-xs font-medium">Open-Source</span>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="professional-card p-6 rounded-2xl group">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-primary-500 to-accent flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-chart-pie text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">ICT Strategy & Advisory</h3>
+                    <p class="text-gray-600 mb-4">Digital transformation roadmaps, technology governance, and ICT policy development.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-700 text-xs font-medium">Strategy</span>
+                        <span class="px-3 py-1 bg-primary-50 rounded-full text-primary-700 text-xs font-medium">Governance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Training Section (From your code) -->
+    <section id="training" class="py-16 px-4 bg-white relative">
+        <div class="absolute inset-0 geometric-pattern opacity-30"></div>
+        
+        <div class="container mx-auto relative z-10">
+            <div class="text-center mb-12">
+                <span class="inline-block px-4 py-2 bg-primary-50 text-primary-600 rounded-full font-semibold text-sm mb-4">Training & Labs</span>
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    ICT Training & <span class="text-primary-600">Laboratory Services</span>
+                </h2>
+                <p class="text-gray-600 max-w-3xl mx-auto text-lg">
+                    Hands-on training delivered from our Zomba-based training centre and fully equipped ICT labs
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="professional-card p-6 rounded-2xl">
+                    <div class="flex items-center mb-6">
+                        <div class="icon-wrapper mr-4">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Technical Training</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center p-3 bg-primary-50 rounded-xl group hover:bg-primary-100 transition">
+                            <i class="fas fa-server text-primary-600 mr-3 text-lg group-hover:scale-110 transition-transform"></i>
+                            <span class="text-gray-700">Linux & Windows Server Admin</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-primary-50 rounded-xl group hover:bg-primary-100 transition">
+                            <i class="fas fa-cubes text-primary-600 mr-3 text-lg group-hover:scale-110 transition-transform"></i>
+                            <span class="text-gray-700">Odoo ERP Training</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-primary-50 rounded-xl group hover:bg-primary-100 transition">
+                            <i class="fas fa-database text-primary-600 mr-3 text-lg group-hover:scale-110 transition-transform"></i>
+                            <span class="text-gray-700">Data Analytics & Engineering</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-primary-50 rounded-xl group hover:bg-primary-100 transition">
+                            <i class="fas fa-robot text-primary-600 mr-3 text-lg group-hover:scale-110 transition-transform"></i>
+                            <span class="text-gray-700">AI Fundamentals & Applied AI</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="professional-card p-6 rounded-2xl">
+                    <div class="flex items-center mb-6">
+                        <div class="icon-wrapper mr-4">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Professional Training</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center p-3 bg-primary-50 rounded-xl group hover:bg-primary-100 transition">
+                            <i class="fas fa-project-diagram text-primary-600 mr-3 text-lg group-hover:scale-110 transition-transform"></i>
+                            <span class="text-gray-700">Project Management (PRINCE2)</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-primary-50 rounded-xl group hover:bg-primary-100 transition">
+                            <i class="fas fa-cogs text-primary-600 mr-3 text-lg group-hover:scale-110 transition-transform"></i>
+                            <span class="text-gray-700">ICT Governance & Controls</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-primary-50 rounded-xl group hover:bg-primary-100 transition">
+                            <i class="fas fa-user-tie text-primary-600 mr-3 text-lg group-hover:scale-110 transition-transform"></i>
+                            <span class="text-gray-700">ICT for Non-ICT Professionals</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-primary-50 rounded-xl group hover:bg-primary-100 transition">
+                            <i class="fas fa-chart-line text-primary-600 mr-3 text-lg group-hover:scale-110 transition-transform"></i>
+                            <span class="text-gray-700">Data Literacy for Managers</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="professional-card bg-gradient-to-br from-primary-600 to-primary-800 text-white p-6 rounded-2xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-14 h-14 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center mr-4">
+                            <i class="fas fa-shipping-fast text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">ICT Equipment Supply</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center p-3 bg-white/10 backdrop-blur-sm rounded-xl">
+                            <i class="fas fa-desktop mr-3 text-lg"></i>
+                            <span>Desktop computers & laptops</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-white/10 backdrop-blur-sm rounded-xl">
+                            <i class="fas fa-server mr-3 text-lg"></i>
+                            <span>Servers & storage solutions</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-white/10 backdrop-blur-sm rounded-xl">
+                            <i class="fas fa-network-wired mr-3 text-lg"></i>
+                            <span>Network equipment</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-white/10 backdrop-blur-sm rounded-xl">
+                            <i class="fas fa-plug mr-3 text-lg"></i>
+                            <span>Structured cabling & components</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section (From your code) -->
+    <section id="contact" class="py-16 px-4 gradient-bg relative">
+        <div class="absolute inset-0 tech-grid opacity-20"></div>
+        
+        <!-- Wave top -->
+        <div class="wave-top">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-white"></path>
+            </svg>
+        </div>
+        
+        <div class="container mx-auto relative z-10">
+            <div class="text-center mb-12">
+                <span class="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm text-white rounded-full font-semibold text-sm mb-4 border border-white/20">Get In Touch</span>
+                <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
+                    Ready to <span class="text-blue-200">Transform Your Business?</span>
+                </h2>
+                <p class="text-blue-100 max-w-3xl mx-auto text-lg">
+                    Contact our team to discuss your ICT needs and discover how we can help
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20">
+                    <h3 class="text-2xl font-bold text-white mb-6">Contact Information</h3>
+                    
+                    <div class="space-y-5">
+                        <div class="flex items-start group">
+                            <div class="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center mr-4 flex-shrink-0 group-hover:bg-white/30 transition">
+                                <i class="fas fa-map-marker-alt text-white text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Headquarters</h4>
+                                <p class="text-blue-100">Zomba, Malawi</p>
+                                <p class="text-blue-200 text-sm">Physical Offices | Training Rooms | ICT Labs</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start group">
+                            <div class="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center mr-4 flex-shrink-0 group-hover:bg-white/30 transition">
+                                <i class="fas fa-envelope text-white text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Email</h4>
+                                <a href="mailto:info@bdtechconsulting.com" class="text-blue-100 hover:text-white transition">info@bdtechconsulting.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start group">
+                            <div class="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center mr-4 flex-shrink-0 group-hover:bg-white/30 transition">
+                                <i class="fas fa-phone text-white text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Phone</h4>
+                                <p class="text-blue-100">+265 XXX XXX XXX</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start group">
+                            <div class="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center mr-4 flex-shrink-0 group-hover:bg-white/30 transition">
+                                <i class="fas fa-clock text-white text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Business Hours</h4>
+                                <p class="text-blue-100">Monday – Friday | 08:00 – 17:00</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Map -->
+                    <div class="mt-6">
+                        <div class="h-48 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/20">
+                            <div class="text-center">
+                                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary-500 to-accent flex items-center justify-center mx-auto mb-3">
+                                    <i class="fas fa-map-marked-alt text-white text-2xl"></i>
+                                </div>
+                                <p class="text-white font-semibold mb-3">Zomba, Malawi</p>
+                                <a href="https://maps.google.com/?q=Zomba,+Malawi" target="_blank" class="inline-flex items-center px-4 py-2 bg-white text-primary-700 rounded-lg hover:bg-gray-100 transition font-semibold text-sm">
+                                    <i class="fas fa-directions mr-2"></i> Get Directions
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-2xl">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Send a Message</h3>
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <input type="text" placeholder="Your Name" class="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition">
+                        </div>
+                        <div>
+                            <input type="email" placeholder="Email Address" class="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition">
+                        </div>
+                        <div>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition">
+                                <option value="">Service Interest</option>
+                                <option value="erp">ERP Implementation</option>
+                                <option value="data">Data & Analytics</option>
+                                <option value="ai">AI Solutions</option>
+                                <option value="training">Training</option>
+                            </select>
+                        </div>
+                        <div>
+                            <textarea rows="4" placeholder="Your Message" class="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-primary-600 to-accent text-white font-bold py-4 rounded-xl hover:opacity-90 transition shadow-lg hover:shadow-xl">
+                            Send Message
+                            <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer (From your code) -->
+    <footer class="bg-gradient-to-b from-primary-950 to-gray-900 text-white py-12 px-4 relative">
+        <div class="absolute inset-0 diagonal-stripes opacity-10"></div>
+        
+        <div class="container mx-auto relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-34 h-34 rounded-xl bg-white/10 p-2 flex items-center justify-center border border-white/20">
+                        <img src="./images/brand-main.png" alt="BD Tech Consulting Logo" class="w-full h-full object-contain relative z-10">
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-4">
+                        Malawian ICT Consulting & Technology Services delivering enterprise solutions across Africa.
+                    </p>
+                    <div class="flex space-x-3">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-300 hover:text-white transition flex items-center group">
+                            <i class="fas fa-chevron-right text-xs mr-2 group-hover:translate-x-1 transition-transform"></i>Home
+                        </a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-white transition flex items-center group">
+                            <i class="fas fa-chevron-right text-xs mr-2 group-hover:translate-x-1 transition-transform"></i>About Us
+                        </a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-white transition flex items-center group">
+                            <i class="fas fa-chevron-right text-xs mr-2 group-hover:translate-x-1 transition-transform"></i>Services
+                        </a></li>
+                        <li><a href="#training" class="text-gray-300 hover:text-white transition flex items-center group">
+                            <i class="fas fa-chevron-right text-xs mr-2 group-hover:translate-x-1 transition-transform"></i>Training
+                        </a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-white transition flex items-center group">
+                            <i class="fas fa-chevron-right text-xs mr-2 group-hover:translate-x-1 transition-transform"></i>Contact
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Our Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="text-gray-300">Enterprise ERP Solutions</li>
+                        <li class="text-gray-300">Data Analytics & AI</li>
+                        <li class="text-gray-300">IT Support & Infrastructure</li>
+                        <li class="text-gray-300">Cloud & Open-Source</li>
+                        <li class="text-gray-300">ICT Training</li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact Us</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-primary-400 mr-2 mt-1"></i>
+                            <span class="text-gray-300">Zomba, Malawi</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-primary-400 mr-2 mt-1"></i>
+                            <a href="mailto:info@bdtechconsulting.com" class="text-gray-300 hover:text-white transition">info@bdtechconsulting.com</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone text-primary-400 mr-2 mt-1"></i>
+                            <span class="text-gray-300">+265 XXX XXX XXX</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-clock text-primary-400 mr-2 mt-1"></i>
+                            <span class="text-gray-300">Mon-Fri: 08:00 - 17:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-700 pt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm text-center md:text-left mb-4 md:mb-0">
+                        © 2023 BD Tech Consulting. All rights reserved.
+                    </p>
+                    <div class="flex flex-wrap gap-4 text-sm">
+                        <a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Active navigation highlighting
+        function setActiveNav() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active-nav');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active-nav');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', setActiveNav);
+        
+        // Mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<i class="fas fa-check mr-2"></i> Message Sent!';
+            submitBtn.classList.add('opacity-75');
+            
+            this.reset();
+            
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.classList.remove('opacity-75');
+            }, 3000);
+        });
+        
+        // Initialize ScrollReveal
+        ScrollReveal().reveal('.professional-card', {
+            duration: 600,
+            distance: '20px',
+            origin: 'bottom',
+            opacity: 0,
+            interval: 100,
+            reset: false
+        });
+        
+        ScrollReveal().reveal('.stat-card', {
+            duration: 500,
+            scale: 0.9,
+            opacity: 0,
+            interval: 100,
+            reset: false
+        });
+        
+        // Set initial active nav
+        setActiveNav();
+    </script>
+</body>
+</html>
