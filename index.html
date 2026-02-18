@@ -13,35 +13,17 @@
                 extend: {
                     colors: {
                         'primary': {
-                            50: '#e8eef7',
-                            100: '#d1ddef',
-                            200: '#a3bbe0',
-                            300: '#7599d0',
-                            400: '#4770ac', // Sail On - main primary
-                            500: '#27549c', // Fist of the North Star - darker primary
-                            600: '#1f4380',
-                            700: '#183264',
-                            800: '#102148',
-                            900: '#08102c',
-                            950: '#040816',
+                            50: '#e8eef7', 100: '#d1ddef', 200: '#a3bbe0', 300: '#7599d0',
+                            400: '#4770ac', 500: '#27549c', 600: '#1f4380', 700: '#183264',
+                            800: '#102148', 900: '#08102c', 950: '#040816',
                         },
                         'accent': {
-                            50: '#fef8f0',
-                            100: '#fef1e1',
-                            200: '#fce4c3',
-                            300: '#fad6a5',
-                            400: '#e2b682', // Honey Gold - lighter accent
-                            500: '#e5a14a', // Pumpkin Pie - main accent
-                            600: '#d1923d',
-                            700: '#bd8330',
-                            800: '#a97423',
-                            900: '#956516',
-                            950: '#7a520d',
+                            50: '#fef8f0', 100: '#fef1e1', 200: '#fce4c3', 300: '#fad6a5',
+                            400: '#e2b682', 500: '#e5a14a', 600: '#d1923d', 700: '#bd8330',
+                            800: '#a97423', 900: '#956516', 950: '#7a520d',
                         },
                         'neutral': {
-                            50: '#fefffe', // White
-                            100: '#f4f1f2', // Plastic Clouds
-                            200: '#95b0d4', // Blue Bell
+                            50: '#fefffe', 100: '#f4f1f2', 200: '#95b0d4',
                         }
                     }
                 }
@@ -50,1283 +32,1161 @@
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-        
-        * {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-        }
-        
-        .active-nav {
-            color: #27549c !important;
-            font-weight: 600;
-        }
-        
+
+        * { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+
+        /* ── Active nav ── */
+        .active-nav { color: #27549c !important; font-weight: 600; }
         .active-nav::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 2px;
+            content: ''; position: absolute; bottom: -5px; left: 0;
+            width: 100%; height: 2px;
             background: linear-gradient(90deg, #27549c, #e5a14a);
         }
-        
+
+        /* ── Cards ── */
         .professional-card {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid rgba(149, 176, 212, 0.3);
+            transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+            border: 1px solid rgba(149,176,212,0.3);
             background: #fefffe;
-            position: relative;
-            overflow: hidden;
+            position: relative; overflow: hidden;
         }
-        
         .professional-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
+            content: ''; position: absolute; top: 0; left: 0;
+            width: 100%; height: 3px;
             background: linear-gradient(90deg, #27549c, #e5a14a);
-            transform: scaleX(0);
-            transform-origin: left;
+            transform: scaleX(0); transform-origin: left;
             transition: transform 0.4s ease;
         }
-        
-        .professional-card:hover::before {
-            transform: scaleX(1);
-        }
-        
+        .professional-card:hover::before { transform: scaleX(1); }
         .professional-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(39, 84, 156, 0.15), 0 10px 20px rgba(39, 84, 156, 0.08);
-            border-color: rgba(71, 112, 172, 0.4);
+            box-shadow: 0 20px 40px rgba(39,84,156,.15), 0 10px 20px rgba(39,84,156,.08);
+            border-color: rgba(71,112,172,.4);
         }
-        
-        /* Animated gradient background */
+
+        /* ── Animated hero gradient ── */
         .gradient-bg {
             background: linear-gradient(-45deg, #27549c, #1f4380, #4770ac, #183264);
             background-size: 400% 400%;
             animation: gradientShift 15s ease infinite;
         }
-        
         @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+            0%   { background-position: 0% 50%; }
+            50%  { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-        
-        /* Geometric patterns */
+
+        /* ── Geometric pattern ── */
         .geometric-pattern {
-            background-image: 
-                linear-gradient(30deg, rgba(39, 84, 156, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(39, 84, 156, 0.03) 87.5%, rgba(39, 84, 156, 0.03)),
-                linear-gradient(150deg, rgba(39, 84, 156, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(39, 84, 156, 0.03) 87.5%, rgba(39, 84, 156, 0.03));
+            background-image:
+                linear-gradient(30deg, rgba(39,84,156,.03) 12%, transparent 12.5%, transparent 87%, rgba(39,84,156,.03) 87.5%),
+                linear-gradient(150deg, rgba(39,84,156,.03) 12%, transparent 12.5%, transparent 87%, rgba(39,84,156,.03) 87.5%);
             background-size: 80px 140px;
-            background-position: 0 0, 0 0, 40px 70px, 40px 70px;
         }
-        
-        /* Floating particles */
+
+        /* ── Floating particles ── */
         .particle {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 50%;
-            animation: float 20s infinite;
+            position: absolute; background: rgba(255,255,255,.08);
+            border-radius: 50%; animation: floatUp 20s infinite;
         }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+        @keyframes floatUp {
+            0%,100% { transform: translateY(0) translateX(0); opacity: 0; }
             10% { opacity: 1; }
             90% { opacity: 1; }
             100% { transform: translateY(-100vh) translateX(100px); opacity: 0; }
         }
-        
-        /* Tech grid lines */
+
+        /* ── Tech grid ── */
         .tech-grid {
-            background-image: 
-                linear-gradient(rgba(39, 84, 156, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(39, 84, 156, 0.03) 1px, transparent 1px);
+            background-image:
+                linear-gradient(rgba(39,84,156,.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(39,84,156,.03) 1px, transparent 1px);
             background-size: 50px 50px;
         }
-        
-        /* Glowing effect */
-        .glow-effect {
-            box-shadow: 0 0 20px rgba(39, 84, 156, 0.2), 0 0 40px rgba(39, 84, 156, 0.1);
-        }
-        
-        /* Pulse animation */
-        @keyframes pulse-ring {
-            0% { transform: scale(0.8); opacity: 1; }
-            100% { transform: scale(2); opacity: 0; }
-        }
-        
-        .pulse-ring {
-            animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
-        }
-        
-        /* Diagonal stripes */
+
         .diagonal-stripes {
             background: repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 10px,
-                rgba(39, 84, 156, 0.02) 10px,
-                rgba(39, 84, 156, 0.02) 20px
-            );
+                45deg, transparent, transparent 10px,
+                rgba(39,84,156,.02) 10px, rgba(39,84,156,.02) 20px);
         }
-        
-        /* Icon wrapper with gradient */
+
+        /* ── Icon wrapper ── */
         .icon-wrapper {
-            width: 56px;
-            height: 56px;
-            border-radius: 14px;
+            width: 56px; height: 56px; border-radius: 14px;
             background: linear-gradient(135deg, #e5a14a, #e2b682);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 24px;
-            box-shadow: 0 4px 12px rgba(229, 161, 74, 0.3);
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 24px;
+            box-shadow: 0 4px 12px rgba(229,161,74,.3);
+            transition: transform .3s ease;
         }
-        
-        /* Stats counter animation */
+
+        /* ── Stat numbers ── */
         .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
+            font-size: 2.5rem; font-weight: 800;
             background: linear-gradient(135deg, #27549c, #4770ac);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
-        /* Social icons */
+        .hero-stat { font-size: 2.5rem; font-weight: 800; color: #fff; }
+
+        /* ── Social icons ── */
         .social-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            width: 40px; height: 40px; border-radius: 10px;
+            background: rgba(255,255,255,.1);
+            display: flex; align-items: center; justify-content: center;
+            transition: all .3s ease; border: 1px solid rgba(255,255,255,.2);
         }
-        
         .social-icon:hover {
             background: linear-gradient(135deg, #e5a14a, #e2b682);
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(229, 161, 74, 0.3);
+            box-shadow: 0 6px 20px rgba(229,161,74,.3);
         }
-        
-        /* Button styles */
+
+        /* ── Buttons ── */
         .btn-primary {
             background: linear-gradient(135deg, #27549c, #4770ac);
-            transition: all 0.3s ease;
+            transition: all .3s ease;
         }
-        
         .btn-primary:hover {
             background: linear-gradient(135deg, #1f4380, #27549c);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(39, 84, 156, 0.3);
+            box-shadow: 0 6px 20px rgba(39,84,156,.3);
         }
-        
         .btn-accent {
             background: linear-gradient(135deg, #e5a14a, #e2b682);
-            transition: all 0.3s ease;
+            transition: all .3s ease;
         }
-        
         .btn-accent:hover {
             background: linear-gradient(135deg, #d1923d, #e5a14a);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(229, 161, 74, 0.3);
+            box-shadow: 0 6px 20px rgba(229,161,74,.3);
         }
-        
-        /* Case study card */
+
+        /* ── Case study / testimonial cards ── */
         .case-study-card {
-            background: linear-gradient(135deg, rgba(39, 84, 156, 0.05), rgba(229, 161, 74, 0.05));
+            background: linear-gradient(135deg, rgba(39,84,156,.05), rgba(229,161,74,.05));
             border-left: 4px solid #e5a14a;
         }
-        
-        /* Testimonial card */
         .testimonial-card {
             background: linear-gradient(135deg, #f8fafc, #f1f5f9);
             border-top: 3px solid #e5a14a;
         }
+
+        /* ── Typing cursor ── */
+        .cursor::after {
+            content: '|'; animation: blink 1s step-end infinite;
+            color: #e5a14a; font-weight: 300;
+        }
+        @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+
+        /* ── Image placeholder ── */
+        .img-placeholder {
+            background: linear-gradient(135deg, rgba(39,84,156,.12), rgba(71,112,172,.08));
+            border: 2px dashed rgba(39,84,156,.25);
+            border-radius: 16px;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            color: rgba(39,84,156,.5);
+            font-size: 0.75rem; font-weight: 500;
+            text-transform: uppercase; letter-spacing: .08em;
+            overflow: hidden; position: relative;
+        }
+        .img-placeholder svg { opacity: .35; }
+        .img-placeholder span { margin-top: 10px; opacity: .6; }
+
+        /* ── Parallax hero visual ── */
+        .hero-visual-card {
+            background: rgba(255,255,255,.08);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,.15);
+            border-radius: 16px;
+            transition: transform .4s ease, border-color .3s ease;
+        }
+        .hero-visual-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(229,161,74,.5);
+        }
+
+        /* ── Section image banner ── */
+        .section-img-banner {
+            width: 100%; border-radius: 16px;
+            overflow: hidden; position: relative;
+        }
+
+        /* ── Reveal animations (JS-driven) ── */
+        [data-reveal] { opacity: 0; transform: translateY(30px); }
+        [data-reveal].revealed {
+            opacity: 1; transform: translateY(0);
+            transition: opacity .6s ease, transform .6s ease;
+        }
+        [data-reveal-left] { opacity: 0; transform: translateX(-40px); }
+        [data-reveal-left].revealed { opacity: 1; transform: translateX(0); transition: opacity .7s ease, transform .7s ease; }
+        [data-reveal-right] { opacity: 0; transform: translateX(40px); }
+        [data-reveal-right].revealed { opacity: 1; transform: translateX(0); transition: opacity .7s ease, transform .7s ease; }
+
+        /* ── Progress bar decoration ── */
+        .skill-bar-track { height: 5px; background: #e8eef7; border-radius: 99px; overflow: hidden; }
+        .skill-bar-fill  { height: 100%; border-radius: 99px; background: linear-gradient(90deg,#27549c,#e5a14a); width: 0; transition: width 1.4s cubic-bezier(.4,0,.2,1); }
+
+        /* ── Number counter ── */
+        .count-number { display: inline-block; }
+
+        /* ── Glow ── */
+        .glow-effect { box-shadow: 0 0 20px rgba(39,84,156,.2), 0 0 40px rgba(39,84,156,.1); }
+
+        /* ── Map placeholder ── */
+        .map-placeholder {
+            background: linear-gradient(135deg, #e8eef7, #d1ddef);
+            border-radius: 14px; overflow: hidden; position: relative;
+        }
+
+        /* Hover lift utility */
+        .hover-lift { transition: transform .3s ease, box-shadow .3s ease; }
+        .hover-lift:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(39,84,156,.12); }
     </style>
 </head>
 <body class="bg-neutral-100">
-    <!-- Header/Navigation -->
-    <header class="fixed w-full top-0 z-50 bg-neutral-50/95 backdrop-blur-md shadow-sm border-b border-neutral-200/50">
-        <nav class="container mx-auto px-4 py-4">
-            <div class="flex items-center justify-between">
-                <!-- Logo -->
-                <div class="flex items-center space-x-3">
-                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-500 to-primary-400 p-2 flex items-center justify-center shadow-lg glow-effect">
-                        <img src="./images/brand-main.png" alt="BD Tech" class="w-full h-full object-contain">
-                    </div>
-                    <div>
-                        <h1 class="text-xl font-bold text-primary-500">BD Tech</h1>
-                        <p class="text-xs text-gray-600">Consulting</p>
-                    </div>
+
+<!-- ══════════════════════ HEADER ══════════════════════ -->
+<header class="fixed w-full top-0 z-50 bg-neutral-50/95 backdrop-blur-md shadow-sm border-b border-neutral-200/50">
+    <nav class="container mx-auto px-4 py-4">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-1">
+                <div class="w-30 h-20  flex items-center justify-center ">
+                    <img src="./images/brand-main.png" alt="BD Tech" class="w-full h-full object-contain"
+                         onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'text-white font-bold text-lg\'>BD</span>'">
                 </div>
-                
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="nav-link relative text-gray-700 hover:text-primary-500 transition font-medium">Home</a>
-                    <a href="#about" class="nav-link relative text-gray-700 hover:text-primary-500 transition font-medium">About</a>
-                    <a href="#services" class="nav-link relative text-gray-700 hover:text-primary-500 transition font-medium">Services</a>
-                    <a href="#training" class="nav-link relative text-gray-700 hover:text-primary-500 transition font-medium">Training</a>
-                    <a href="#equipment" class="nav-link relative text-gray-700 hover:text-primary-500 transition font-medium">Equipment</a>
-                    <a href="#work" class="nav-link relative text-gray-700 hover:text-primary-500 transition font-medium">Our Work</a>
-                    <a href="#contact" class="btn-accent text-white px-6 py-2 rounded-lg font-medium">Contact Us</a>
-                </div>
-                
-                <!-- Mobile Menu Button -->
-                <button id="menu-btn" class="md:hidden text-primary-500 hover:text-primary-600 transition">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-            </div>
             
-            <!-- Mobile Navigation -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-neutral-200/50 pt-4">
-                <div class="flex flex-col space-y-3">
-                    <a href="#home" class="text-gray-700 hover:text-primary-500 transition font-medium py-2 px-4 rounded-lg hover:bg-neutral-100">Home</a>
-                    <a href="#about" class="text-gray-700 hover:text-primary-500 transition font-medium py-2 px-4 rounded-lg hover:bg-neutral-100">About</a>
-                    <a href="#services" class="text-gray-700 hover:text-primary-500 transition font-medium py-2 px-4 rounded-lg hover:bg-neutral-100">Services</a>
-                    <a href="#training" class="text-gray-700 hover:text-primary-500 transition font-medium py-2 px-4 rounded-lg hover:bg-neutral-100">Training</a>
-                    <a href="#equipment" class="text-gray-700 hover:text-primary-500 transition font-medium py-2 px-4 rounded-lg hover:bg-neutral-100">Equipment</a>
-                    <a href="#work" class="text-gray-700 hover:text-primary-500 transition font-medium py-2 px-4 rounded-lg hover:bg-neutral-100">Our Work</a>
-                    <a href="#contact" class="btn-accent text-white px-6 py-2 rounded-lg font-medium text-center">Contact Us</a>
-                </div>
             </div>
-        </nav>
-    </header>
-    
-    <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center gradient-bg overflow-hidden pt-20">
-        <!-- Animated particles -->
-        <div class="particle" style="width: 100px; height: 100px; left: 10%; animation-delay: 0s;"></div>
-        <div class="particle" style="width: 60px; height: 60px; left: 60%; animation-delay: 3s;"></div>
-        <div class="particle" style="width: 80px; height: 80px; left: 85%; animation-delay: 6s;"></div>
-        
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <!-- Left content -->
-                <div class="text-white">
-                    <div class="inline-block mb-6">
-                        <span class="bg-accent-500/20 text-accent-400 px-4 py-2 rounded-full text-sm font-semibold border border-accent-500/30">
-                            🇲🇼 Proudly Malawian
-                        </span>
-                    </div>
-                    
-                    <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                        Enterprise ICT Solutions for <span class="text-accent-400">Africa</span>
-                    </h1>
-                    
-                    <p class="text-xl text-neutral-200 mb-8 leading-relaxed">
-                        Delivering world-class technology consulting, ERP implementation, and digital transformation services across Malawi and beyond.
-                    </p>
-                    
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#services" class="btn-accent text-white px-8 py-4 rounded-lg font-semibold text-lg inline-flex items-center group">
-                            Explore Services
-                            <i class="fas fa-arrow-right ml-3 group-hover:translate-x-1 transition-transform"></i>
-                        </a>
-                        <a href="#contact" class="bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-semibold text-lg border-2 border-white/30 hover:bg-white/20 transition inline-flex items-center">
-                            <i class="fas fa-phone mr-3"></i>
-                            Get in Touch
-                        </a>
-                    </div>
-                    
-                    <!-- Stats -->
-                    <div class="grid grid-cols-3 gap-6 mt-12 pt-12 border-t border-white/20">
-                        <div>
-                            <div class="stat-number text-white">50+</div>
-                            <p class="text-neutral-200 text-sm mt-1">Projects Delivered</p>
-                        </div>
-                        <div>
-                            <div class="stat-number text-white">15+</div>
-                            <p class="text-neutral-200 text-sm mt-1">Years Experience</p>
-                        </div>
-                        <div>
-                            <div class="stat-number text-white">100%</div>
-                            <p class="text-neutral-200 text-sm mt-1">Client Satisfaction</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Right content - illustration/image placeholder -->
-                <div class="hidden lg:block relative">
-                    <div class="relative">
-                        <!-- Decorative elements -->
-                        <div class="absolute top-0 right-0 w-72 h-72 bg-accent-500/20 rounded-full blur-3xl"></div>
-                        <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary-400/20 rounded-full blur-3xl"></div>
-                        
-                        <!-- Main illustration area -->
-                        <div class="relative bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
-                            <div class="grid grid-cols-2 gap-4">
-                                <div class="bg-white/10 rounded-xl p-6 border border-white/10 hover:border-accent-400/50 transition">
-                                    <i class="fas fa-database text-4xl text-accent-400 mb-3"></i>
-                                    <h3 class="text-white font-semibold">Data Analytics</h3>
-                                </div>
-                                <div class="bg-white/10 rounded-xl p-6 border border-white/10 hover:border-accent-400/50 transition">
-                                    <i class="fas fa-cloud text-4xl text-accent-400 mb-3"></i>
-                                    <h3 class="text-white font-semibold">Cloud Solutions</h3>
-                                </div>
-                                <div class="bg-white/10 rounded-xl p-6 border border-white/10 hover:border-accent-400/50 transition">
-                                    <i class="fas fa-cogs text-4xl text-accent-400 mb-3"></i>
-                                    <h3 class="text-white font-semibold">ERP Systems</h3>
-                                </div>
-                                <div class="bg-white/10 rounded-xl p-6 border border-white/10 hover:border-accent-400/50 transition">
-                                    <i class="fas fa-graduation-cap text-4xl text-accent-400 mb-3"></i>
-                                    <h3 class="text-white font-semibold">ICT Training</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home"      class="nav-link relative text-gray-700 hover:text-primary-500 transition font-medium">Home</a>
+                <a href="#about"     class="nav-link relative text-gray-700 hover:text-primary-500 transition font-medium">About</a>
+                <a href="#services"  class="nav-link relative text-gray-700 hover:text-primary-500 transition font-medium">Services</a>
+                <a href="#training"  class="nav-link relative text-gray-700 hover:text-primary-500 transition font-medium">Training</a>
+                <a href="#equipment" class="nav-link relative text-gray-700 hover:text-primary-500 transition font-medium">Equipment</a>
+                <a href="#work"      class="nav-link relative text-gray-700 hover:text-primary-500 transition font-medium">Our Work</a>
+                <a href="#contact"   class="btn-accent text-white px-6 py-2 rounded-lg font-medium">Contact Us</a>
+            </div>
+            <button id="menu-btn" class="md:hidden text-primary-500 hover:text-primary-600 transition">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-neutral-200/50 pt-4">
+            <div class="flex flex-col space-y-3">
+                <a href="#home"      class="text-gray-700 hover:text-primary-500 transition font-medium py-2 px-4 rounded-lg hover:bg-neutral-100">Home</a>
+                <a href="#about"     class="text-gray-700 hover:text-primary-500 transition font-medium py-2 px-4 rounded-lg hover:bg-neutral-100">About</a>
+                <a href="#services"  class="text-gray-700 hover:text-primary-500 transition font-medium py-2 px-4 rounded-lg hover:bg-neutral-100">Services</a>
+                <a href="#training"  class="text-gray-700 hover:text-primary-500 transition font-medium py-2 px-4 rounded-lg hover:bg-neutral-100">Training</a>
+                <a href="#equipment" class="text-gray-700 hover:text-primary-500 transition font-medium py-2 px-4 rounded-lg hover:bg-neutral-100">Equipment</a>
+                <a href="#work"      class="text-gray-700 hover:text-primary-500 transition font-medium py-2 px-4 rounded-lg hover:bg-neutral-100">Our Work</a>
+                <a href="#contact"   class="btn-accent text-white px-6 py-2 rounded-lg font-medium text-center">Contact Us</a>
             </div>
         </div>
-    </section>
-    
-    <!-- About Section -->
-    <section id="about" class="py-20 px-4 bg-neutral-50 geometric-pattern">
-        <div class="container mx-auto">
-            <div class="text-center mb-16">
-                <span class="text-accent-500 font-semibold text-sm uppercase tracking-wider">About Us</span>
-                <h2 class="text-4xl md:text-5xl font-bold text-primary-500 mt-2 mb-4">Malawi's Premier ICT Partner</h2>
-                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-                    Leading the digital transformation journey across Africa with innovative solutions and expert consultation.
+    </nav>
+</header>
+
+<!-- ══════════════════════ HERO ══════════════════════ -->
+<section id="home" class="relative min-h-screen flex items-center gradient-bg overflow-hidden pt-20">
+    <!-- Particles -->
+    <div class="particle" style="width:100px;height:100px;left:10%;animation-delay:0s;"></div>
+    <div class="particle" style="width:60px;height:60px;left:60%;animation-delay:3s;"></div>
+    <div class="particle" style="width:80px;height:80px;left:85%;animation-delay:6s;"></div>
+    <div class="particle" style="width:40px;height:40px;left:30%;animation-delay:9s;"></div>
+
+    <div class="container mx-auto px-4 relative z-10 py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+            <!-- Left copy -->
+            <div class="text-white" data-reveal>
+                <div class="inline-block mb-6">
+                    <span class="bg-accent-500/20 text-accent-400 px-4 py-2 rounded-full text-sm font-semibold border border-accent-500/30">
+                        🇲🇼 Proudly Malawian
+                    </span>
+                </div>
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                    Enterprise ICT<br>Solutions for <span class="text-accent-400 cursor" id="hero-typed"></span>
+                </h1>
+                <p class="text-xl text-neutral-200 mb-8 leading-relaxed">
+                    Malawian ICT Consulting, Open-Source ERP, Data &amp; AI Solutions, Training and Technology Services.
                 </p>
-            </div>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <!-- Left: About content -->
-                <div>
-                    <div class="space-y-6">
-                        <div class="flex gap-4">
-                            <div class="icon-wrapper flex-shrink-0">
-                                <i class="fas fa-bullseye"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-bold text-primary-500 mb-2">Our Mission</h3>
-                                <p class="text-gray-600 leading-relaxed">
-                                    To empower African businesses with cutting-edge technology solutions that drive efficiency, innovation, and sustainable growth.
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex gap-4">
-                            <div class="icon-wrapper flex-shrink-0">
-                                <i class="fas fa-eye"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-bold text-primary-500 mb-2">Our Vision</h3>
-                                <p class="text-gray-600 leading-relaxed">
-                                    To be the most trusted ICT consulting partner in Africa, recognized for excellence, innovation, and client success.
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex gap-4">
-                            <div class="icon-wrapper flex-shrink-0">
-                                <i class="fas fa-award"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-bold text-primary-500 mb-2">Our Values</h3>
-                                <p class="text-gray-600 leading-relaxed">
-                                    Excellence, integrity, innovation, and client-centricity guide everything we do.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Right: Key highlights -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="professional-card p-6 rounded-xl">
-                        <div class="text-accent-500 text-4xl mb-4">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h4 class="text-xl font-bold text-primary-500 mb-2">Expert Team</h4>
-                        <p class="text-gray-600 text-sm">Certified professionals with deep industry expertise</p>
-                    </div>
-                    
-                    <div class="professional-card p-6 rounded-xl">
-                        <div class="text-accent-500 text-4xl mb-4">
-                            <i class="fas fa-globe-africa"></i>
-                        </div>
-                        <h4 class="text-xl font-bold text-primary-500 mb-2">Local Presence</h4>
-                        <p class="text-gray-600 text-sm">Based in Zomba, serving all of Malawi and beyond</p>
-                    </div>
-                    
-                    <div class="professional-card p-6 rounded-xl">
-                        <div class="text-accent-500 text-4xl mb-4">
-                            <i class="fas fa-handshake"></i>
-                        </div>
-                        <h4 class="text-xl font-bold text-primary-500 mb-2">Partnership</h4>
-                        <p class="text-gray-600 text-sm">Long-term relationships built on trust and results</p>
-                    </div>
-                    
-                    <div class="professional-card p-6 rounded-xl">
-                        <div class="text-accent-500 text-4xl mb-4">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                        <h4 class="text-xl font-bold text-primary-500 mb-2">Innovation</h4>
-                        <p class="text-gray-600 text-sm">Cutting-edge solutions for modern challenges</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Services Section -->
-    <section id="services" class="py-20 px-4 bg-white tech-grid">
-        <div class="container mx-auto">
-            <div class="text-center mb-16">
-                <span class="text-accent-500 font-semibold text-sm uppercase tracking-wider">Our Services</span>
-                <h2 class="text-4xl md:text-5xl font-bold text-primary-500 mt-2 mb-4">Comprehensive ICT Solutions</h2>
-                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-                    From enterprise systems to training, we provide end-to-end technology services tailored to your needs.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service Card 1 -->
-                <div class="professional-card p-8 rounded-xl group">
-                    <div class="icon-wrapper mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-sitemap"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-primary-500 mb-3">Enterprise ERP Solutions</h3>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        Full-stack ERP implementation including Odoo, ERPNext, and custom solutions tailored to your business processes.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-accent-500 mr-2 mt-1"></i>
-                            <span>Odoo ERP Implementation (Finance, Procurement, HR, Inventory)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-accent-500 mr-2 mt-1"></i>
-                            <span>ERPNext & Dolibarr Deployment</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-accent-500 mr-2 mt-1"></i>
-                            <span>Microsoft Dynamics AX / D365 Consulting</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-accent-500 mr-2 mt-1"></i>
-                            <span>Customization & Module Development</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Service Card 2 -->
-                <div class="professional-card p-8 rounded-xl group">
-                    <div class="icon-wrapper mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-primary-500 mb-3">Data, Analytics & Engineering</h3>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        Transform your data into actionable insights with advanced analytics, machine learning, and AI solutions.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-accent-500 mr-2 mt-1"></i>
-                            <span>Data Analytics & Visualization (Metabase, Redash, Power BI)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-accent-500 mr-2 mt-1"></i>
-                            <span>Data Engineering & ETL Pipelines</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-accent-500 mr-2 mt-1"></i>
-                            <span>Enterprise Data Modelling</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-accent-500 mr-2 mt-1"></i>
-                            <span>Financial & Operational Reporting</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Service Card 3 -->
-                <div class="professional-card p-8 rounded-xl group">
-                    <div class="icon-wrapper mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-server"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-primary-500 mb-3">IT Support & Infrastructure</h3>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        Reliable IT support, infrastructure setup, and maintenance services to keep your business running smoothly.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-accent-500 mr-2 mt-1"></i>
-                            <span>Linux & Windows Server Administration</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-accent-500 mr-2 mt-1"></i>
-                            <span>24/7 Technical Support (Level 1-3)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-accent-500 mr-2 mt-1"></i>
-                            <span>Network Design & Implementation</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-accent-500 mr-2 mt-1"></i>
-                            <span>Active Directory & User Management</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Service Card 4 -->
-                <div class="professional-card p-8 rounded-xl group">
-                    <div class="icon-wrapper mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-cloud"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-primary-500 mb-3">Cloud & Open-Source</h3>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        Leverage cloud technologies and open-source solutions for scalable, cost-effective digital transformation.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-accent-500 mr-2 mt-1"></i>
-                            <span>Cloud & Hybrid Architecture Advisory</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-accent-500 mr-2 mt-1"></i>
-                            <span>Open-Source Platform Deployment</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-accent-500 mr-2 mt-1"></i>
-                            <span>Infrastructure Cost Optimization</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-accent-500 mr-2 mt-1"></i>
-                            <span>Business Continuity Planning</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Service Card 5 -->
-                <div class="professional-card p-8 rounded-xl group">
-                    <div class="icon-wrapper mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-primary-500 mb-3">AI & Modern Technologies</h3>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        Implement practical AI solutions that enhance productivity and decision-making.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-accent-500 mr-2 mt-1"></i>
-                            <span>AI Readiness & Maturity Assessments</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-accent-500 mr-2 mt-1"></i>
-                            <span>Predictive Analytics & Intelligent Reporting</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-accent-500 mr-2 mt-1"></i>
-                            <span>AI-Enabled Process Automation</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-accent-500 mr-2 mt-1"></i>
-                            <span>Responsible AI & Data Governance</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Service Card 6 -->
-                <div class="professional-card p-8 rounded-xl group">
-                    <div class="icon-wrapper mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-clipboard-list"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-primary-500 mb-3">ICT Strategy & Advisory</h3>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        Comprehensive technology strategy and governance services.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-accent-500 mr-2 mt-1"></i>
-                            <span>ICT Strategy & Digital Transformation Roadmaps</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-accent-500 mr-2 mt-1"></i>
-                            <span>Technology Governance & Compliance</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-accent-500 mr-2 mt-1"></i>
-                            <span>Vendor Evaluation & Solution Selection</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-accent-500 mr-2 mt-1"></i>
-                            <span>ICT Policy & Standards Development</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Training Section -->
-    <section id="training" class="py-20 px-4 bg-gradient-to-br from-primary-500 to-primary-400 relative overflow-hidden">
-        <div class="absolute inset-0 diagonal-stripes opacity-10"></div>
-        
-        <div class="container mx-auto relative z-10">
-            <div class="text-center mb-16">
-                <span class="text-accent-400 font-semibold text-sm uppercase tracking-wider">Training & Development</span>
-                <h2 class="text-4xl md:text-5xl font-bold text-white mt-2 mb-4">Empowering Through Education</h2>
-                <p class="text-neutral-200 text-lg max-w-2xl mx-auto">
-                    Professional ICT training programs designed to build capacity and foster innovation in Malawi.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-                <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/15 transition group">
-                    <div class="text-accent-400 text-3xl mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-server"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2">Technical Training</h3>
-                    <p class="text-neutral-200 text-sm mb-4">Advanced technical skills development</p>
-                    <ul class="space-y-1 text-sm text-neutral-200">
-                        <li>• Linux & Windows Server Administration</li>
-                        <li>• Odoo ERP (Functional & Technical)</li>
-                        <li>• Data Analytics & Data Engineering</li>
-                        <li>• Metabase & Redash Reporting</li>
-                        <li>• AI Fundamentals & Applied AI</li>
-                        <li>• Power BI & Data Visualization</li>
-                    </ul>
-                </div>
-                
-                <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/15 transition group">
-                    <div class="text-accent-400 text-3xl mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2">Professional & Management Training</h3>
-                    <p class="text-neutral-200 text-sm mb-4">Leadership and management skills</p>
-                    <ul class="space-y-1 text-sm text-neutral-200">
-                        <li>• Project Management using PRINCE2</li>
-                        <li>• ICT Governance & Controls</li>
-                        <li>• IT Service Management Concepts</li>
-                        <li>• Data Modelling for BI & ERP</li>
-                    </ul>
-                </div>
-                
-                <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/15 transition group">
-                    <div class="text-accent-400 text-3xl mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2">Business & Awareness Training</h3>
-                    <p class="text-neutral-200 text-sm mb-4">For non-technical professionals</p>
-                    <ul class="space-y-1 text-sm text-neutral-200">
-                        <li>• ICT for Non-ICT Professionals</li>
-                        <li>• Data Literacy for Managers</li>
-                        <li>• Understanding Enterprise Systems</li>
-                        <li>• Technology Risk Awareness</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20">
-                <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-                    <div>
-                        <h3 class="text-2xl font-bold text-white mb-2">Hands-On Training Facilities</h3>
-                        <p class="text-neutral-200">
-                            Our Zomba offices host fully equipped labs for hands-on training, testing, and solution development.
-                        </p>
-                    </div>
-                    <a href="#contact" class="btn-accent text-white px-8 py-3 rounded-lg font-semibold inline-flex items-center whitespace-nowrap">
-                        <i class="fas fa-graduation-cap mr-3"></i>
-                        Book Training Session
+                <div class="flex flex-wrap gap-4">
+                    <a href="#services" class="btn-accent text-white px-8 py-4 rounded-lg font-semibold text-lg inline-flex items-center group">
+                        Explore Services
+                        <i class="fas fa-arrow-right ml-3 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="#contact" class="bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-semibold text-lg border-2 border-white/30 hover:bg-white/20 transition inline-flex items-center">
+                        <i class="fas fa-phone mr-3"></i>Get in Touch
                     </a>
                 </div>
+                <!-- Stats -->
+                <div class="grid grid-cols-3 gap-6 mt-12 pt-12 border-t border-white/20">
+                    <div><div class="hero-stat">50+</div><p class="text-neutral-200 text-sm mt-1">Projects Delivered</p></div>
+                    <div><div class="hero-stat">15+</div><p class="text-neutral-200 text-sm mt-1">Years Experience</p></div>
+                    <div><div class="hero-stat">100%</div><p class="text-neutral-200 text-sm mt-1">Client Satisfaction</p></div>
+                </div>
+            </div>
+
+            <!-- Right — image placeholder + floating service tiles -->
+            <div class="hidden lg:block relative" data-reveal-right>
+                <!-- Main hero image placeholder -->
+                <div class="img-placeholder" style="height:340px;margin-bottom:1.5rem;">
+                    <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#27549c" stroke-width="1.2">
+                        <rect x="3" y="3" width="18" height="18" rx="3"/>
+                        <circle cx="8.5" cy="8.5" r="1.5"/>
+                        <polyline points="21 15 16 10 5 21"/>
+                    </svg>
+                    <span style="color:#27549c;">Team / Office Photo Placeholder</span>
+                </div>
+                <!-- Mini service tiles -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="hero-visual-card p-5">
+                        <i class="fas fa-database text-3xl text-accent-400 mb-2"></i>
+                        <h3 class="text-white font-semibold text-sm">Data Analytics</h3>
+                    </div>
+                    <div class="hero-visual-card p-5">
+                        <i class="fas fa-cloud text-3xl text-accent-400 mb-2"></i>
+                        <h3 class="text-white font-semibold text-sm">Cloud Solutions</h3>
+                    </div>
+                    <div class="hero-visual-card p-5">
+                        <i class="fas fa-cogs text-3xl text-accent-400 mb-2"></i>
+                        <h3 class="text-white font-semibold text-sm">ERP Systems</h3>
+                    </div>
+                    <div class="hero-visual-card p-5">
+                        <i class="fas fa-graduation-cap text-3xl text-accent-400 mb-2"></i>
+                        <h3 class="text-white font-semibold text-sm">ICT Training</h3>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
-    
-    <!-- ICT Equipment Section -->
-    <section id="equipment" class="py-20 px-4 bg-white">
-        <div class="container mx-auto">
-            <div class="text-center mb-16">
-                <span class="text-accent-500 font-semibold text-sm uppercase tracking-wider">ICT Equipment</span>
-                <h2 class="text-4xl md:text-5xl font-bold text-primary-500 mt-2 mb-4">Technology Hardware Solutions</h2>
-                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-                    We supply and support a wide range of ICT hardware and accessories for enterprise environments.
-                </p>
+    </div>
+
+    <!-- Bottom wave -->
+    <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180">
+        <svg viewBox="0 0 1200 80" preserveAspectRatio="none" style="width:100%;height:50px;">
+            <path d="M0,40 C300,80 900,0 1200,40 L1200,80 L0,80 Z" fill="#f4f1f2"/>
+        </svg>
+    </div>
+</section>
+
+<!-- ══════════════════════ ABOUT ══════════════════════ -->
+<section id="about" class="py-24 px-4 bg-neutral-50 geometric-pattern">
+    <div class="container mx-auto">
+
+        <div class="text-center mb-16" data-reveal>
+            <span class="text-accent-500 font-semibold text-sm uppercase tracking-wider">About Us</span>
+            <h2 class="text-4xl md:text-5xl font-bold text-primary-500 mt-2 mb-4">Malawi's Premier ICT Partner</h2>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                BD Tech Consulting is a Malawian-owned ICT consulting and technology services company, headquartered in Zomba, Malawi, with physical offices, training rooms, and ICT laboratory facilities.
+            </p>
+        </div>
+
+        <!-- Full-width image banner -->
+        <div class="section-img-banner mb-16" data-reveal>
+            <div class="img-placeholder" style="height:300px;">
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#27549c" stroke-width="1.1">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                    <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+                <span style="color:#27549c;">Zomba Office / Lab Facility Photo Placeholder</span>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="professional-card p-6 rounded-xl text-center">
-                    <div class="text-accent-500 text-4xl mb-4">
-                        <i class="fas fa-desktop"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-primary-500 mb-2">Computers & Workstations</h4>
-                    <p class="text-gray-600 text-sm">
-                        Desktop computers, laptops, and high-performance workstations for all business needs.
-                    </p>
-                </div>
-                
-                <div class="professional-card p-6 rounded-xl text-center">
-                    <div class="text-accent-500 text-4xl mb-4">
-                        <i class="fas fa-server"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-primary-500 mb-2">Servers & Storage</h4>
-                    <p class="text-gray-600 text-sm">
-                        Enterprise servers, storage solutions, and backup systems for reliable data management.
-                    </p>
-                </div>
-                
-                <div class="professional-card p-6 rounded-xl text-center">
-                    <div class="text-accent-500 text-4xl mb-4">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-primary-500 mb-2">Network Equipment</h4>
-                    <p class="text-gray-600 text-sm">
-                        Routers, switches, firewalls, access points, and structured cabling solutions.
-                    </p>
-                </div>
-                
-                <div class="professional-card p-6 rounded-xl text-center">
-                    <div class="text-accent-500 text-4xl mb-4">
-                        <i class="fas fa-print"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-primary-500 mb-2">Peripherals & Accessories</h4>
-                    <p class="text-gray-600 text-sm">
-                        Printers, scanners, monitors, and all necessary computer accessories and peripherals.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="mt-12 bg-gradient-to-r from-primary-50 to-accent-50 rounded-xl p-8 border border-primary-200">
-                <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+            <!-- Mission / Vision / Values -->
+            <div class="space-y-8" data-reveal-left>
+                <div class="flex gap-4">
+                    <div class="icon-wrapper flex-shrink-0"><i class="fas fa-bullseye"></i></div>
                     <div>
-                        <h3 class="text-2xl font-bold text-primary-500 mb-2">Complete Technology Solutions</h3>
-                        <p class="text-gray-600">
-                            From procurement and installation to configuration and after-sales support, we provide end-to-end equipment solutions.
-                        </p>
+                        <h3 class="text-2xl font-bold text-primary-500 mb-2">Our Mission</h3>
+                        <p class="text-gray-600 leading-relaxed">To deliver practical, secure, and affordable ICT solutions while strengthening local technical capacity.</p>
                     </div>
-                    <a href="#contact" class="btn-primary text-white px-8 py-3 rounded-lg font-semibold inline-flex items-center">
-                        <i class="fas fa-shopping-cart mr-3"></i>
-                        Request Equipment Quote
-                    </a>
+                </div>
+                <div class="flex gap-4">
+                    <div class="icon-wrapper flex-shrink-0"><i class="fas fa-eye"></i></div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-primary-500 mb-2">Our Vision</h3>
+                        <p class="text-gray-600 leading-relaxed">To be a leading Malawian ICT consulting and training company with a strong footprint across Africa.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="icon-wrapper flex-shrink-0"><i class="fas fa-award"></i></div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-primary-500 mb-2">Our Values</h3>
+                        <p class="text-gray-600 leading-relaxed">Integrity and accountability · Practical technology adoption · Knowledge transfer and sustainability · Regional collaboration.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Highlight cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" data-reveal-right>
+                <div class="professional-card p-6 rounded-xl hover-lift">
+                    <!-- mini image placeholder -->
+                    <div class="img-placeholder mb-4" style="height:100px;">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#27549c" stroke-width="1.4">
+                            <circle cx="17" cy="7" r="3"/><circle cx="7" cy="7" r="3"/>
+                            <path d="M1 21v-2a6 6 0 0 1 6-6h10a6 6 0 0 1 6 6v2"/>
+                        </svg>
+                    </div>
+                    <div class="text-accent-500 text-4xl mb-3"><i class="fas fa-users"></i></div>
+                    <h4 class="text-xl font-bold text-primary-500 mb-1">Expert Team</h4>
+                    <p class="text-gray-600 text-sm">Certified professionals with deep industry expertise.</p>
+                </div>
+
+                <div class="professional-card p-6 rounded-xl hover-lift">
+                    <div class="img-placeholder mb-4" style="height:100px;">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#27549c" stroke-width="1.4">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="2" y1="12" x2="22" y2="12"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                    </div>
+                    <div class="text-accent-500 text-4xl mb-3"><i class="fas fa-globe-africa"></i></div>
+                    <h4 class="text-xl font-bold text-primary-500 mb-1">Local Presence</h4>
+                    <p class="text-gray-600 text-sm">Based in Zomba, serving all of Malawi and beyond.</p>
+                </div>
+
+                <div class="professional-card p-6 rounded-xl hover-lift">
+                    <div class="img-placeholder mb-4" style="height:100px;">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#27549c" stroke-width="1.4">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </div>
+                    <div class="text-accent-500 text-4xl mb-3"><i class="fas fa-handshake"></i></div>
+                    <h4 class="text-xl font-bold text-primary-500 mb-1">Partnership</h4>
+                    <p class="text-gray-600 text-sm">Long-term relationships built on trust and results.</p>
+                </div>
+
+                <div class="professional-card p-6 rounded-xl hover-lift">
+                    <div class="img-placeholder mb-4" style="height:100px;">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#27549c" stroke-width="1.4">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                        </svg>
+                    </div>
+                    <div class="text-accent-500 text-4xl mb-3"><i class="fas fa-rocket"></i></div>
+                    <h4 class="text-xl font-bold text-primary-500 mb-1">Innovation</h4>
+                    <p class="text-gray-600 text-sm">Sustainable, cost-effective technologies organisations can manage and scale independently.</p>
                 </div>
             </div>
         </div>
-    </section>
-    
-    <!-- Our Work & Experience Section -->
-    <section id="work" class="py-20 px-4 bg-neutral-50 geometric-pattern">
-        <div class="container mx-auto">
-            <div class="text-center mb-16">
-                <span class="text-accent-500 font-semibold text-sm uppercase tracking-wider">Our Experience</span>
-                <h2 class="text-4xl md:text-5xl font-bold text-primary-500 mt-2 mb-4">Projects & Case Studies</h2>
-                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-                    A selection of our successful implementations and client engagements.
+    </div>
+</section>
+
+<!-- ══════════════════════ SERVICES ══════════════════════ -->
+<section id="services" class="py-24 px-4 bg-white tech-grid">
+    <div class="container mx-auto">
+
+        <div class="text-center mb-16" data-reveal>
+            <span class="text-accent-500 font-semibold text-sm uppercase tracking-wider">Our Services</span>
+            <h2 class="text-4xl md:text-5xl font-bold text-primary-500 mt-2 mb-4">Comprehensive ICT Solutions</h2>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                We deliver enterprise systems implementation, open-source ERP solutions, data and AI services, IT support, and ICT equipment supply.
+            </p>
+        </div>
+
+        <!-- Services image strip -->
+        <div class="grid grid-cols-3 gap-4 mb-14" data-reveal>
+            <div class="img-placeholder" style="height:180px;">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#27549c" stroke-width="1.4">
+                    <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+                </svg>
+                <span style="color:#27549c;">ERP / Office Photo</span>
+            </div>
+            <div class="img-placeholder" style="height:180px;">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#27549c" stroke-width="1.4">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                </svg>
+                <span style="color:#27549c;">Data / Analytics Photo</span>
+            </div>
+            <div class="img-placeholder" style="height:180px;">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#27549c" stroke-width="1.4">
+                    <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+                    <line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/>
+                </svg>
+                <span style="color:#27549c;">IT Infrastructure Photo</span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="professional-card p-8 rounded-xl group" data-reveal>
+                <div class="icon-wrapper mb-6 group-hover:scale-110 transition-transform"><i class="fas fa-sitemap"></i></div>
+                <h3 class="text-2xl font-bold text-primary-500 mb-3">Enterprise ERP Solutions</h3>
+                <p class="text-gray-600 mb-4 leading-relaxed">Open-source ERP implementation tailored to your business processes.</p>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li class="flex items-start"><i class="fas fa-check text-accent-500 mr-2 mt-1"></i><span>Odoo ERP implementation (Finance, Procurement, HR, Inventory, Projects)</span></li>
+                    <li class="flex items-start"><i class="fas fa-check text-accent-500 mr-2 mt-1"></i><span>Customization and module development</span></li>
+                    <li class="flex items-start"><i class="fas fa-check text-accent-500 mr-2 mt-1"></i><span>ERPNext, Dolibarr &amp; Microsoft Dynamics AX / D365</span></li>
+                    <li class="flex items-start"><i class="fas fa-check text-accent-500 mr-2 mt-1"></i><span>Data migration, integrations and post-implementation support</span></li>
+                </ul>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="professional-card p-8 rounded-xl group" data-reveal>
+                <div class="icon-wrapper mb-6 group-hover:scale-110 transition-transform"><i class="fas fa-chart-line"></i></div>
+                <h3 class="text-2xl font-bold text-primary-500 mb-3">Data, Analytics &amp; Engineering</h3>
+                <p class="text-gray-600 mb-4 leading-relaxed">Robust analytics solutions using both open-source and enterprise tools.</p>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li class="flex items-start"><i class="fas fa-check text-accent-500 mr-2 mt-1"></i><span>Data analytics and visualization (Metabase, Redash, Power BI)</span></li>
+                    <li class="flex items-start"><i class="fas fa-check text-accent-500 mr-2 mt-1"></i><span>Data engineering and ETL pipelines</span></li>
+                    <li class="flex items-start"><i class="fas fa-check text-accent-500 mr-2 mt-1"></i><span>Enterprise data modelling</span></li>
+                    <li class="flex items-start"><i class="fas fa-check text-accent-500 mr-2 mt-1"></i><span>Financial and operational reporting</span></li>
+                </ul>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="professional-card p-8 rounded-xl group" data-reveal>
+                <div class="icon-wrapper mb-6 group-hover:scale-110 transition-transform"><i class="fas fa-server"></i></div>
+                <h3 class="text-2xl font-bold text-primary-500 mb-3">IT Support &amp; Infrastructure</h3>
+                <p class="text-gray-600 mb-4 leading-relaxed">Professional IT support and administration services for enterprise environments.</p>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li class="flex items-start"><i class="fas fa-check text-accent-500 mr-2 mt-1"></i><span>Linux &amp; Windows Server Administration</span></li>
+                    <li class="flex items-start"><i class="fas fa-check text-accent-500 mr-2 mt-1"></i><span>End-user support (Level 1–3)</span></li>
+                    <li class="flex items-start"><i class="fas fa-check text-accent-500 mr-2 mt-1"></i><span>Network design and implementation</span></li>
+                    <li class="flex items-start"><i class="fas fa-check text-accent-500 mr-2 mt-1"></i><span>Active Directory and user management</span></li>
+                </ul>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="professional-card p-8 rounded-xl group" data-reveal>
+                <div class="icon-wrapper mb-6 group-hover:scale-110 transition-transform"><i class="fas fa-cloud"></i></div>
+                <h3 class="text-2xl font-bold text-primary-500 mb-3">Cloud &amp; Open-Source Platforms</h3>
+                <p class="text-gray-600 mb-4 leading-relaxed">Scalable, cost-effective digital transformation with open-source at the core.</p>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li class="flex items-start"><i class="fas fa-check text-accent-500 mr-2 mt-1"></i><span>Cloud and hybrid architecture advisory</span></li>
+                    <li class="flex items-start"><i class="fas fa-check text-accent-500 mr-2 mt-1"></i><span>Deployment of open-source platforms</span></li>
+                    <li class="flex items-start"><i class="fas fa-check text-accent-500 mr-2 mt-1"></i><span>Infrastructure cost optimization</span></li>
+                    <li class="flex items-start"><i class="fas fa-check text-accent-500 mr-2 mt-1"></i><span>Business continuity and disaster recovery planning</span></li>
+                </ul>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="professional-card p-8 rounded-xl group" data-reveal>
+                <div class="icon-wrapper mb-6 group-hover:scale-110 transition-transform"><i class="fas fa-robot"></i></div>
+                <h3 class="text-2xl font-bold text-primary-500 mb-3">Artificial Intelligence &amp; Modern Technologies</h3>
+                <p class="text-gray-600 mb-4 leading-relaxed">Practical AI solutions that enhance productivity and decision-making.</p>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li class="flex items-start"><i class="fas fa-check text-accent-500 mr-2 mt-1"></i><span>AI readiness and maturity assessments</span></li>
+                    <li class="flex items-start"><i class="fas fa-check text-accent-500 mr-2 mt-1"></i><span>Predictive analytics and intelligent reporting</span></li>
+                    <li class="flex items-start"><i class="fas fa-check text-accent-500 mr-2 mt-1"></i><span>AI-enabled process automation</span></li>
+                    <li class="flex items-start"><i class="fas fa-check text-accent-500 mr-2 mt-1"></i><span>Responsible AI and data governance advisory</span></li>
+                </ul>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="professional-card p-8 rounded-xl group" data-reveal>
+                <div class="icon-wrapper mb-6 group-hover:scale-110 transition-transform"><i class="fas fa-clipboard-list"></i></div>
+                <h3 class="text-2xl font-bold text-primary-500 mb-3">ICT Strategy &amp; Advisory</h3>
+                <p class="text-gray-600 mb-4 leading-relaxed">Comprehensive technology strategy and governance services.</p>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li class="flex items-start"><i class="fas fa-check text-accent-500 mr-2 mt-1"></i><span>ICT strategy and digital transformation roadmaps</span></li>
+                    <li class="flex items-start"><i class="fas fa-check text-accent-500 mr-2 mt-1"></i><span>Technology governance and compliance</span></li>
+                    <li class="flex items-start"><i class="fas fa-check text-accent-500 mr-2 mt-1"></i><span>Vendor evaluation and solution selection</span></li>
+                    <li class="flex items-start"><i class="fas fa-check text-accent-500 mr-2 mt-1"></i><span>ICT policy and standards development</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════ TRAINING ══════════════════════ -->
+<section id="training" class="py-24 px-4 bg-gradient-to-br from-primary-500 to-primary-400 relative overflow-hidden">
+    <div class="absolute inset-0 diagonal-stripes opacity-10"></div>
+
+    <div class="container mx-auto relative z-10">
+
+        <div class="text-center mb-16" data-reveal>
+            <span class="text-accent-400 font-semibold text-sm uppercase tracking-wider">Training &amp; Development</span>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mt-2 mb-4"> ICT Training &amp; Laboratory Services</h2>
+            <p class="text-neutral-200 text-lg max-w-2xl mx-auto">
+                Training is delivered from our Zomba-based training centre and labs, ensuring practical, hands-on experience.
+            </p>
+        </div>
+
+        <!-- Training facility placeholder -->
+        <div class="mb-12" data-reveal>
+            <div class="img-placeholder" style="height:260px; background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.25);">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1.2">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                </svg>
+                <span style="color:rgba(255,255,255,.5);">Training Room / ICT Lab Photo Placeholder</span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <!-- Technical -->
+            <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/15 transition group" data-reveal>
+                <div class="text-accent-400 text-3xl mb-4 group-hover:scale-110 transition-transform"><i class="fas fa-server"></i></div>
+                <h3 class="text-xl font-bold text-white mb-2">Technical Training</h3>
+                <p class="text-neutral-200 text-sm mb-4">Advanced technical skills development</p>
+                <ul class="space-y-1 text-sm text-neutral-200">
+                    <li>• Linux Administration</li>
+                    <li>• Windows Server Administration</li>
+                    <li>• Odoo ERP (Functional &amp; Technical)</li>
+                    <li>• Data Analytics &amp; Data Engineering</li>
+                    <li>• Data Modelling for BI &amp; ERP</li>
+                    <li>• Metabase &amp; Redash Reporting</li>
+                    <li>• AI Fundamentals &amp; Applied AI</li>
+                    <li>• Power BI</li>
+                </ul>
+            </div>
+
+            <!-- Professional -->
+            <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/15 transition group" data-reveal>
+                <div class="text-accent-400 text-3xl mb-4 group-hover:scale-110 transition-transform"><i class="fas fa-briefcase"></i></div>
+                <h3 class="text-xl font-bold text-white mb-2">Professional &amp; Management Training</h3>
+                <p class="text-neutral-200 text-sm mb-4">Leadership and management skills</p>
+                <ul class="space-y-1 text-sm text-neutral-200">
+                    <li>• Project Management using PRINCE2</li>
+                    <li>• ICT Governance and Controls</li>
+                    <li>• IT Service Management Concepts</li>
+                </ul>
+            </div>
+
+            <!-- Business -->
+            <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/15 transition group" data-reveal>
+                <div class="text-accent-400 text-3xl mb-4 group-hover:scale-110 transition-transform"><i class="fas fa-chart-line"></i></div>
+                <h3 class="text-xl font-bold text-white mb-2">Business &amp; Awareness Training</h3>
+                <p class="text-neutral-200 text-sm mb-4">For non-technical professionals</p>
+                <ul class="space-y-1 text-sm text-neutral-200">
+                    <li>• ICT for Non-ICT Professionals</li>
+                    <li>• Data Literacy for Managers</li>
+                    <li>• Understanding Enterprise Systems and Technology Risks</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CTA banner -->
+        <div class="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20" data-reveal>
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Hands-On Training Facilities</h3>
+                    <p class="text-neutral-200">Our Zomba offices host fully equipped labs for hands-on training, testing, and solution development.</p>
+                </div>
+                <a href="#contact" class="btn-accent text-white px-8 py-3 rounded-lg font-semibold inline-flex items-center whitespace-nowrap">
+                    <i class="fas fa-graduation-cap mr-3"></i>Book Training Session
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════ EQUIPMENT ══════════════════════ -->
+<section id="equipment" class="py-24 px-4 bg-white">
+    <div class="container mx-auto">
+
+        <div class="text-center mb-16" data-reveal>
+            <span class="text-accent-500 font-semibold text-sm uppercase tracking-wider">ICT Equipment</span>
+            <h2 class="text-4xl md:text-5xl font-bold text-primary-500 mt-2 mb-4">ICT Equipment Supply &amp; Technology Solutions</h2>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                We supply and support a wide range of ICT hardware and accessories, including procurement, installation, configuration, and after-sales support.
+            </p>
+        </div>
+
+        <!-- Equipment image strip -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12" data-reveal>
+            <div class="img-placeholder" style="height:140px;">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#27549c" stroke-width="1.4"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                <span style="color:#27549c;font-size:.6rem;">Computers</span>
+            </div>
+            <div class="img-placeholder" style="height:140px;">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#27549c" stroke-width="1.4"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                <span style="color:#27549c;font-size:.6rem;">Servers</span>
+            </div>
+            <div class="img-placeholder" style="height:140px;">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#27549c" stroke-width="1.4"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                <span style="color:#27549c;font-size:.6rem;">Network</span>
+            </div>
+            <div class="img-placeholder" style="height:140px;">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#27549c" stroke-width="1.4"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                <span style="color:#27549c;font-size:.6rem;">Peripherals</span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="professional-card p-6 rounded-xl text-center hover-lift" data-reveal>
+                <div class="text-accent-500 text-4xl mb-4"><i class="fas fa-desktop"></i></div>
+                <h4 class="text-xl font-bold text-primary-500 mb-2">Computers &amp; Workstations</h4>
+                <p class="text-gray-600 text-sm">Desktop computers, laptops, and high-performance workstations for all business needs.</p>
+            </div>
+            <div class="professional-card p-6 rounded-xl text-center hover-lift" data-reveal>
+                <div class="text-accent-500 text-4xl mb-4"><i class="fas fa-server"></i></div>
+                <h4 class="text-xl font-bold text-primary-500 mb-2">Servers &amp; Storage</h4>
+                <p class="text-gray-600 text-sm">Enterprise servers, storage solutions, and backup systems for reliable data management.</p>
+            </div>
+            <div class="professional-card p-6 rounded-xl text-center hover-lift" data-reveal>
+                <div class="text-accent-500 text-4xl mb-4"><i class="fas fa-network-wired"></i></div>
+                <h4 class="text-xl font-bold text-primary-500 mb-2">Network Equipment</h4>
+                <p class="text-gray-600 text-sm">Routers, switches, firewalls, access points, and structured cabling solutions.</p>
+            </div>
+            <div class="professional-card p-6 rounded-xl text-center hover-lift" data-reveal>
+                <div class="text-accent-500 text-4xl mb-4"><i class="fas fa-print"></i></div>
+                <h4 class="text-xl font-bold text-primary-500 mb-2">Peripherals &amp; Accessories</h4>
+                <p class="text-gray-600 text-sm">Printers, scanners, monitors, and all necessary computer accessories and peripherals.</p>
+            </div>
+        </div>
+
+        <div class="mt-12 bg-gradient-to-r from-primary-50 to-accent-50 rounded-xl p-8 border border-primary-200" data-reveal>
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>
+                    <h3 class="text-2xl font-bold text-primary-500 mb-2">Complete Technology Solutions</h3>
+                    <p class="text-gray-600">From procurement and installation to configuration and after-sales support, we provide end-to-end equipment solutions.</p>
+                </div>
+                <a href="#contact" class="btn-primary text-white px-8 py-3 rounded-lg font-semibold inline-flex items-center">
+                    <i class="fas fa-shopping-cart mr-3"></i>Request Equipment Quote
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════ OUR WORK ══════════════════════ -->
+<section id="work" class="py-24 px-4 bg-neutral-50 geometric-pattern">
+    <div class="container mx-auto">
+
+        <div class="text-center mb-16" data-reveal>
+            <span class="text-accent-500 font-semibold text-sm uppercase tracking-wider">Our Experience</span>
+            <h2 class="text-4xl md:text-5xl font-bold text-primary-500 mt-2 mb-4">Our Work &amp; Experience</h2>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                Open-source ERP implementations · Data analytics and BI solutions · IT support and infrastructure · ICT training and capacity building · ICT equipment supply and deployment.
+            </p>
+            <p class="text-gray-500 text-sm mt-2">Detailed case studies available upon request.</p>
+        </div>
+
+        <!-- Work showcase strip -->
+        <div class="grid grid-cols-2 gap-4 mb-12" data-reveal>
+            <div class="img-placeholder" style="height:200px;">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#27549c" stroke-width="1.3">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>
+                </svg>
+                <span style="color:#27549c;">ERP Implementation Project Photo</span>
+            </div>
+            <div class="img-placeholder" style="height:200px;">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#27549c" stroke-width="1.3">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+                </svg>
+                <span style="color:#27549c;">Analytics / Training Project Photo</span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            <div class="case-study-card p-6 rounded-xl hover-lift" data-reveal>
+                <div class="flex items-start mb-4">
+                    <div class="icon-wrapper mr-4"><i class="fas fa-cogs"></i></div>
+                    <div>
+                        <h3 class="text-xl font-bold text-primary-500">Open-Source ERP Implementation</h3>
+                        <span class="text-accent-500 text-sm font-medium">Enterprise Solutions</span>
+                    </div>
+                </div>
+                <p class="text-gray-600 mb-4">Complete Odoo ERP implementation for a manufacturing company, including finance, procurement, inventory, and HR modules. Customized workflows and integrated reporting dashboards.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-primary-100 text-primary-700 text-xs px-3 py-1 rounded-full">Odoo</span>
+                    <span class="bg-primary-100 text-primary-700 text-xs px-3 py-1 rounded-full">Customization</span>
+                    <span class="bg-primary-100 text-primary-700 text-xs px-3 py-1 rounded-full">Data Migration</span>
+                </div>
+            </div>
+
+            <div class="case-study-card p-6 rounded-xl hover-lift" data-reveal>
+                <div class="flex items-start mb-4">
+                    <div class="icon-wrapper mr-4"><i class="fas fa-chart-bar"></i></div>
+                    <div>
+                        <h3 class="text-xl font-bold text-primary-500">Data Analytics Platform</h3>
+                        <span class="text-accent-500 text-sm font-medium">Business Intelligence</span>
+                    </div>
+                </div>
+                <p class="text-gray-600 mb-4">Implemented Metabase analytics platform for a financial institution with automated ETL pipelines, data warehousing, and executive dashboards for real-time decision making.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-primary-100 text-primary-700 text-xs px-3 py-1 rounded-full">Metabase</span>
+                    <span class="bg-primary-100 text-primary-700 text-xs px-3 py-1 rounded-full">Data Engineering</span>
+                    <span class="bg-primary-100 text-primary-700 text-xs px-3 py-1 rounded-full">Dashboards</span>
+                </div>
+            </div>
+
+            <div class="case-study-card p-6 rounded-xl hover-lift" data-reveal>
+                <div class="flex items-start mb-4">
+                    <div class="icon-wrapper mr-4"><i class="fas fa-network-wired"></i></div>
+                    <div>
+                        <h3 class="text-xl font-bold text-primary-500">IT Infrastructure Overhaul</h3>
+                        <span class="text-accent-500 text-sm font-medium">IT Support</span>
+                    </div>
+                </div>
+                <p class="text-gray-600 mb-4">Complete network redesign and server infrastructure upgrade for an educational institution, including Active Directory implementation and support services.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-primary-100 text-primary-700 text-xs px-3 py-1 rounded-full">Network Design</span>
+                    <span class="bg-primary-100 text-primary-700 text-xs px-3 py-1 rounded-full">Server Administration</span>
+                    <span class="bg-primary-100 text-primary-700 text-xs px-3 py-1 rounded-full">Support Services</span>
+                </div>
+            </div>
+
+            <div class="case-study-card p-6 rounded-xl hover-lift" data-reveal>
+                <div class="flex items-start mb-4">
+                    <div class="icon-wrapper mr-4"><i class="fas fa-graduation-cap"></i></div>
+                    <div>
+                        <h3 class="text-xl font-bold text-primary-500">ICT Capacity Building</h3>
+                        <span class="text-accent-500 text-sm font-medium">Training</span>
+                    </div>
+                </div>
+                <p class="text-gray-600 mb-4">Comprehensive ICT training program for government staff covering Linux administration, data analytics, and enterprise systems management.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-primary-100 text-primary-700 text-xs px-3 py-1 rounded-full">Linux Training</span>
+                    <span class="bg-primary-100 text-primary-700 text-xs px-3 py-1 rounded-full">Data Analytics</span>
+                    <span class="bg-primary-100 text-primary-700 text-xs px-3 py-1 rounded-full">Enterprise Systems</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonials -->
+        <div class="mt-20">
+            <div class="text-center mb-12" data-reveal>
+                <span class="text-accent-500 font-semibold text-sm uppercase tracking-wider">Client Feedback</span>
+                <h2 class="text-3xl font-bold text-primary-500 mt-2 mb-4"> What Our Clients Say</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="testimonial-card p-6 rounded-xl hover-lift" data-reveal>
+                    <div class="flex items-center mb-4">
+                        <!-- Avatar placeholder -->
+                        <div class="img-placeholder mr-4 flex-shrink-0" style="width:52px;height:52px;border-radius:50%;border-style:solid;">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#27549c" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 20a8 8 0 0 1 16 0"/></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-primary-500">Operations Manager</h4>
+                            <p class="text-gray-500 text-sm">Manufacturing Industry</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-4">"BD Tech Consulting delivered a reliable open-source ERP and analytics solution while ensuring our team could support it internally."</p>
+                    <div class="text-accent-500">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <div class="testimonial-card p-6 rounded-xl hover-lift" data-reveal>
+                    <div class="flex items-center mb-4">
+                        <div class="img-placeholder mr-4 flex-shrink-0" style="width:52px;height:52px;border-radius:50%;border-style:solid;">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#27549c" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 20a8 8 0 0 1 16 0"/></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-primary-500">ICT Manager</h4>
+                            <p class="text-gray-500 text-sm">Financial Institution</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-4">"Their combination of consulting, IT support, and training sets them apart."</p>
+                    <div class="text-accent-500">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Partnerships -->
+        <div class="mt-20 pt-12 border-t border-gray-200">
+            <div class="text-center mb-8" data-reveal>
+                <span class="text-accent-500 font-semibold text-sm uppercase tracking-wider">Collaboration</span>
+                <h2 class="text-3xl font-bold text-primary-500 mt-2 mb-4"> Partnerships &amp; Joint Ventures</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    BD Tech Consulting works through joint ventures across Africa, partnering with regional ICT firms, open-source communities, and technology providers to deliver scalable and compliant solutions.
                 </p>
             </div>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-                <div class="case-study-card p-6 rounded-xl">
-                    <div class="flex items-start mb-4">
-                        <div class="icon-wrapper mr-4">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-primary-500">Open-Source ERP Implementation</h3>
-                            <span class="text-accent-500 text-sm font-medium">Enterprise Solutions</span>
-                        </div>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8 mt-8">
+                <div class="text-center hover-lift" data-reveal>
+                    <div class="w-20 h-20 rounded-xl bg-gradient-to-br from-primary-100 to-accent-100 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-handshake text-3xl text-primary-500"></i>
                     </div>
-                    <p class="text-gray-600 mb-4">
-                        Complete Odoo ERP implementation for a manufacturing company, including finance, procurement, inventory, and HR modules. Customized workflows and integrated reporting dashboards.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-primary-100 text-primary-700 text-xs px-3 py-1 rounded-full">Odoo</span>
-                        <span class="bg-primary-100 text-primary-700 text-xs px-3 py-1 rounded-full">Customization</span>
-                        <span class="bg-primary-100 text-primary-700 text-xs px-3 py-1 rounded-full">Data Migration</span>
-                    </div>
+                    <h4 class="font-bold text-primary-500">Regional Partnerships</h4>
+                    <p class="text-gray-600 text-sm">Collaborating with ICT firms across Africa</p>
                 </div>
-                
-                <div class="case-study-card p-6 rounded-xl">
-                    <div class="flex items-start mb-4">
-                        <div class="icon-wrapper mr-4">
-                            <i class="fas fa-chart-bar"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-primary-500">Data Analytics Platform</h3>
-                            <span class="text-accent-500 text-sm font-medium">Business Intelligence</span>
-                        </div>
+                <div class="text-center hover-lift" data-reveal>
+                    <div class="w-20 h-20 rounded-xl bg-gradient-to-br from-primary-100 to-accent-100 flex items-center justify-center mx-auto mb-4">
+                        <i class="fab fa-osi text-3xl text-primary-500"></i>
                     </div>
-                    <p class="text-gray-600 mb-4">
-                        Implemented Metabase analytics platform for a financial institution with automated ETL pipelines, data warehousing, and executive dashboards for real-time decision making.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-primary-100 text-primary-700 text-xs px-3 py-1 rounded-full">Metabase</span>
-                        <span class="bg-primary-100 text-primary-700 text-xs px-3 py-1 rounded-full">Data Engineering</span>
-                        <span class="bg-primary-100 text-primary-700 text-xs px-3 py-1 rounded-full">Dashboards</span>
-                    </div>
+                    <h4 class="font-bold text-primary-500">Open-Source Community</h4>
+                    <p class="text-gray-600 text-sm">Active contributors to open-source projects</p>
                 </div>
-                
-                <div class="case-study-card p-6 rounded-xl">
-                    <div class="flex items-start mb-4">
-                        <div class="icon-wrapper mr-4">
-                            <i class="fas fa-network-wired"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-primary-500">IT Infrastructure Overhaul</h3>
-                            <span class="text-accent-500 text-sm font-medium">IT Support</span>
-                        </div>
+                <div class="text-center hover-lift" data-reveal>
+                    <div class="w-20 h-20 rounded-xl bg-gradient-to-br from-primary-100 to-accent-100 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-certificate text-3xl text-primary-500"></i>
                     </div>
-                    <p class="text-gray-600 mb-4">
-                        Complete network redesign and server infrastructure upgrade for an educational institution, including Active Directory implementation and 24/7 support services.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-primary-100 text-primary-700 text-xs px-3 py-1 rounded-full">Network Design</span>
-                        <span class="bg-primary-100 text-primary-700 text-xs px-3 py-1 rounded-full">Server Administration</span>
-                        <span class="bg-primary-100 text-primary-700 text-xs px-3 py-1 rounded-full">Support Services</span>
-                    </div>
-                </div>
-                
-                <div class="case-study-card p-6 rounded-xl">
-                    <div class="flex items-start mb-4">
-                        <div class="icon-wrapper mr-4">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-primary-500">ICT Capacity Building</h3>
-                            <span class="text-accent-500 text-sm font-medium">Training</span>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 mb-4">
-                        Comprehensive ICT training program for government staff covering Linux administration, data analytics, and enterprise systems management over a 6-month period.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-primary-100 text-primary-700 text-xs px-3 py-1 rounded-full">Linux Training</span>
-                        <span class="bg-primary-100 text-primary-700 text-xs px-3 py-1 rounded-full">Data Analytics</span>
-                        <span class="bg-primary-100 text-primary-700 text-xs px-3 py-1 rounded-full">Enterprise Systems</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Testimonials Section -->
-            <div class="mt-20">
-                <div class="text-center mb-12">
-                    <span class="text-accent-500 font-semibold text-sm uppercase tracking-wider">Client Feedback</span>
-                    <h2 class="text-3xl font-bold text-primary-500 mt-2 mb-4">What Our Clients Say</h2>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="testimonial-card p-6 rounded-xl">
-                        <div class="flex items-center mb-4">
-                            <div class="w-12 h-12 rounded-full bg-gradient-to-r from-primary-400 to-primary-500 flex items-center justify-center text-white font-bold mr-4">
-                                OM
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-primary-500">Operations Manager</h4>
-                                <p class="text-gray-500 text-sm">Manufacturing Industry</p>
-                            </div>
-                        </div>
-                        <p class="text-gray-600 italic mb-4">
-                            "BD Tech Consulting delivered a reliable open-source ERP and analytics solution while ensuring our team could support it internally. Their knowledge transfer approach sets them apart."
-                        </p>
-                        <div class="text-accent-500">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial-card p-6 rounded-xl">
-                        <div class="flex items-center mb-4">
-                            <div class="w-12 h-12 rounded-full bg-gradient-to-r from-primary-400 to-primary-500 flex items-center justify-center text-white font-bold mr-4">
-                                IM
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-primary-500">ICT Manager</h4>
-                                <p class="text-gray-500 text-sm">Financial Institution</p>
-                            </div>
-                        </div>
-                        <p class="text-gray-600 italic mb-4">
-                            "Their combination of consulting, IT support, and training provides complete technology solutions. The data analytics platform they implemented transformed our reporting capabilities."
-                        </p>
-                        <div class="text-accent-500">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Partnerships Section -->
-            <div class="mt-20 pt-12 border-t border-gray-200">
-                <div class="text-center mb-8">
-                    <span class="text-accent-500 font-semibold text-sm uppercase tracking-wider">Collaboration</span>
-                    <h2 class="text-3xl font-bold text-primary-500 mt-2 mb-4">Partnerships & Joint Ventures</h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto">
-                        We work through joint ventures across Africa, partnering with regional ICT firms, open-source communities, and technology providers to deliver scalable and compliant solutions.
-                    </p>
-                </div>
-                
-                <div class="flex flex-col md:flex-row items-center justify-center gap-8 mt-8">
-                    <div class="text-center">
-                        <div class="w-20 h-20 rounded-xl bg-gradient-to-br from-primary-100 to-accent-100 flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-handshake text-3xl text-primary-500"></i>
-                        </div>
-                        <h4 class="font-bold text-primary-500">Regional Partnerships</h4>
-                        <p class="text-gray-600 text-sm">Collaborating with ICT firms across Africa</p>
-                    </div>
-                    
-                    <div class="text-center">
-                        <div class="w-20 h-20 rounded-xl bg-gradient-to-br from-primary-100 to-accent-100 flex items-center justify-center mx-auto mb-4">
-                            <i class="fab fa-osi text-3xl text-primary-500"></i>
-                        </div>
-                        <h4 class="font-bold text-primary-500">Open-Source Community</h4>
-                        <p class="text-gray-600 text-sm">Active contributors to open-source projects</p>
-                    </div>
-                    
-                    <div class="text-center">
-                        <div class="w-20 h-20 rounded-xl bg-gradient-to-br from-primary-100 to-accent-100 flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-certificate text-3xl text-primary-500"></i>
-                        </div>
-                        <h4 class="font-bold text-primary-500">Technology Providers</h4>
-                        <p class="text-gray-600 text-sm">Partnerships with leading technology vendors</p>
-                    </div>
+                    <h4 class="font-bold text-primary-500">Technology Providers</h4>
+                    <p class="text-gray-600 text-sm">Partnerships with leading technology vendors</p>
                 </div>
             </div>
         </div>
-    </section>
-    
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 px-4 bg-neutral-50 geometric-pattern">
-        <div class="container mx-auto">
-            <div class="text-center mb-16">
-                <span class="text-accent-500 font-semibold text-sm uppercase tracking-wider">Get In Touch</span>
-                <h2 class="text-4xl md:text-5xl font-bold text-primary-500 mt-2 mb-4">Let's Work Together</h2>
-                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-                    Ready to transform your business with technology? Contact us today for a consultation.
-                </p>
+    </div>
+</section>
+
+<!-- ══════════════════════ CONTACT ══════════════════════ -->
+<section id="contact" class="py-24 px-4 bg-neutral-50 geometric-pattern">
+    <div class="container mx-auto">
+
+        <div class="text-center mb-16" data-reveal>
+            <span class="text-accent-500 font-semibold text-sm uppercase tracking-wider">Get In Touch</span>
+            <h2 class="text-4xl md:text-5xl font-bold text-primary-500 mt-2 mb-4">Let's Work Together</h2>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto">Ready to transform your business with technology? Contact us today for a consultation.</p>
+        </div>
+
+        <!-- Map / location placeholder -->
+        <div class="map-placeholder mb-12 flex items-center justify-center gap-4 p-6" style="height:180px;" data-reveal>
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#27549c" stroke-width="1.4">
+                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span class="text-primary-500 font-medium">Map / Location Photo Placeholder — Zomba, Malawi</span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            <!-- Form -->
+            <div class="professional-card p-8 rounded-xl" data-reveal-left>
+                <h3 class="text-2xl font-bold text-primary-500 mb-6">Send Us a Message</h3>
+                <form id="contact-form" class="space-y-6">
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Full Name</label>
+                        <input type="text" required class="w-full px-4 py-3 rounded-lg border border-neutral-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-400/20 outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Email Address</label>
+                        <input type="email" required class="w-full px-4 py-3 rounded-lg border border-neutral-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-400/20 outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                        <input type="tel" class="w-full px-4 py-3 rounded-lg border border-neutral-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-400/20 outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Service Interest</label>
+                        <select class="w-full px-4 py-3 rounded-lg border border-neutral-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-400/20 outline-none transition">
+                            <option value="">Select a service</option>
+                            <option>ERP Solutions</option>
+                            <option>Data Analytics &amp; AI</option>
+                            <option>IT Support &amp; Infrastructure</option>
+                            <option>ICT Training</option>
+                            <option>ICT Equipment</option>
+                            <option>ICT Strategy &amp; Advisory</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Message</label>
+                        <textarea required rows="4" class="w-full px-4 py-3 rounded-lg border border-neutral-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-400/20 outline-none transition resize-none"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary text-white px-8 py-3 rounded-lg font-semibold w-full">
+                        <i class="fas fa-paper-plane mr-2"></i>Send Message
+                    </button>
+                </form>
             </div>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-                <!-- Contact Form -->
-                <div class="professional-card p-8 rounded-xl">
-                    <h3 class="text-2xl font-bold text-primary-500 mb-6">Send Us a Message</h3>
-                    <form id="contact-form" class="space-y-6">
-                        <div>
-                            <label class="block text-gray-700 font-medium mb-2">Full Name</label>
-                            <input type="text" required class="w-full px-4 py-3 rounded-lg border border-neutral-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-400/20 outline-none transition">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700 font-medium mb-2">Email Address</label>
-                            <input type="email" required class="w-full px-4 py-3 rounded-lg border border-neutral-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-400/20 outline-none transition">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700 font-medium mb-2">Phone Number</label>
-                            <input type="tel" class="w-full px-4 py-3 rounded-lg border border-neutral-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-400/20 outline-none transition">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700 font-medium mb-2">Service Interest</label>
-                            <select class="w-full px-4 py-3 rounded-lg border border-neutral-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-400/20 outline-none transition">
-                                <option value="">Select a service</option>
-                                <option value="erp">ERP Solutions</option>
-                                <option value="analytics">Data Analytics & AI</option>
-                                <option value="support">IT Support & Infrastructure</option>
-                                <option value="training">ICT Training</option>
-                                <option value="equipment">ICT Equipment</option>
-                                <option value="strategy">ICT Strategy & Advisory</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-gray-700 font-medium mb-2">Message</label>
-                            <textarea required rows="4" class="w-full px-4 py-3 rounded-lg border border-neutral-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-400/20 outline-none transition resize-none"></textarea>
-                        </div>
-                        <button type="submit" class="btn-primary text-white px-8 py-3 rounded-lg font-semibold w-full">
-                            <i class="fas fa-paper-plane mr-2"></i>
-                            Send Message
-                        </button>
-                    </form>
+
+            <!-- Info cards -->
+            <div class="space-y-6" data-reveal-right>
+                <div class="professional-card p-6 rounded-xl flex items-start gap-4 hover-lift">
+                    <div class="icon-wrapper flex-shrink-0"><i class="fas fa-map-marker-alt"></i></div>
+                    <div>
+                        <h4 class="text-xl font-bold text-primary-500 mb-2">Our Location</h4>
+                        <p class="text-gray-600">Zomba, Malawi</p>
+                        <p class="text-gray-500 text-sm mt-1">Physical Offices | Training Rooms | ICT Labs</p>
+                    </div>
                 </div>
-                
-                <!-- Contact Information -->
-                <div class="space-y-6">
-                    <div class="professional-card p-6 rounded-xl flex items-start gap-4">
-                        <div class="icon-wrapper flex-shrink-0">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-bold text-primary-500 mb-2">Our Location</h4>
-                            <p class="text-gray-600">Zomba, Malawi</p>
-                            <p class="text-gray-500 text-sm mt-1">Physical Offices | Training Rooms | ICT Labs</p>
-                        </div>
+                <div class="professional-card p-6 rounded-xl flex items-start gap-4 hover-lift">
+                    <div class="icon-wrapper flex-shrink-0"><i class="fas fa-envelope"></i></div>
+                    <div>
+                        <h4 class="text-xl font-bold text-primary-500 mb-2">Email Us</h4>
+                        <a href="mailto:info@bdtechconsulting.com" class="text-gray-600 hover:text-accent-500 transition">info@bdtechconsulting.com</a>
                     </div>
-                    
-                    <div class="professional-card p-6 rounded-xl flex items-start gap-4">
-                        <div class="icon-wrapper flex-shrink-0">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-bold text-primary-500 mb-2">Email Us</h4>
-                            <a href="mailto:info@bdtechconsulting.com" class="text-gray-600 hover:text-accent-500 transition">info@bdtechconsulting.com</a>
-                        </div>
+                </div>
+                <div class="professional-card p-6 rounded-xl flex items-start gap-4 hover-lift">
+                    <div class="icon-wrapper flex-shrink-0"><i class="fas fa-phone"></i></div>
+                    <div>
+                        <h4 class="text-xl font-bold text-primary-500 mb-2">Call Us</h4>
+                        <p class="text-gray-600">+265 XXX XXX XXX</p>
                     </div>
-                    
-                    <div class="professional-card p-6 rounded-xl flex items-start gap-4">
-                        <div class="icon-wrapper flex-shrink-0">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-bold text-primary-500 mb-2">Call Us</h4>
-                            <p class="text-gray-600">+265 XXX XXX XXX</p>
-                        </div>
+                </div>
+                <div class="professional-card p-6 rounded-xl flex items-start gap-4 hover-lift">
+                    <div class="icon-wrapper flex-shrink-0"><i class="fas fa-clock"></i></div>
+                    <div>
+                        <h4 class="text-xl font-bold text-primary-500 mb-2">Business Hours</h4>
+                        <p class="text-gray-600">Monday – Friday | 08:00 – 17:00</p>
                     </div>
-                    
-                    <div class="professional-card p-6 rounded-xl flex items-start gap-4">
-                        <div class="icon-wrapper flex-shrink-0">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-bold text-primary-500 mb-2">Business Hours</h4>
-                            <p class="text-gray-600">Monday - Friday: 08:00 - 17:00</p>
-                            <p class="text-gray-600 text-sm mt-1">Weekend: Closed</p>
-                        </div>
-                    </div>
-                    
-                    <div class="professional-card p-6 rounded-xl bg-gradient-to-r from-primary-50 to-accent-50 border-primary-200">
-                        <h4 class="text-xl font-bold text-primary-500 mb-3">Why Choose BD Tech Consulting?</h4>
-                        <ul class="space-y-2 text-sm text-gray-600">
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-accent-500 mr-2 mt-1"></i>
-                                <span>Malawian-owned with deep local understanding</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-accent-500 mr-2 mt-1"></i>
-                                <span>Hands-on training facilities and labs</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-accent-500 mr-2 mt-1"></i>
-                                <span>Focus on sustainable, cost-effective technologies</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-accent-500 mr-2 mt-1"></i>
-                                <span>Knowledge transfer and capacity building</span>
-                            </li>
-                        </ul>
-                    </div>
+                </div>
+                <div class="professional-card p-6 rounded-xl bg-gradient-to-r from-primary-50 to-accent-50 border-primary-200">
+                    <h4 class="text-xl font-bold text-primary-500 mb-3">Why Choose BD Tech Consulting?</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start"><i class="fas fa-check text-accent-500 mr-2 mt-1"></i><span>Malawian-owned with deep local understanding</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-accent-500 mr-2 mt-1"></i><span>Hands-on training facilities and labs</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-accent-500 mr-2 mt-1"></i><span>Focus on sustainable, cost-effective technologies</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-accent-500 mr-2 mt-1"></i><span>Knowledge transfer and capacity building</span></li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer class="bg-gradient-to-b from-primary-500 to-primary-800 text-white py-12 px-4 relative">
-        <div class="absolute inset-0 diagonal-stripes opacity-10"></div>
-        
-        <div class="container mx-auto relative z-10">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-                <!-- Company Info -->
-                <div>
-                    <div class="flex items-center space-x-3 mb-4">
-                        <div class="w-34 h-34 rounded-xl bg-white/10 p-2 flex items-center justify-center border border-white/20">
-                        <img src="./images/brand-main.png" alt="BD Tech Consulting Logo" class="w-full h-full object-contain relative z-10">
-                        </div>
-                    </div>
-                    <p class="text-neutral-200 text-sm mb-4">
-                        Malawian ICT Consulting & Technology Services delivering enterprise solutions across Africa.
-                    </p>
-                    <div class="flex space-x-3">
-                        <a href="#" class="social-icon">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="social-icon">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="social-icon">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="social-icon">
-                            <i class="fab fa-instagram"></i>
-                        </a>
+    </div>
+</section>
+
+<!-- ══════════════════════ FOOTER ══════════════════════ -->
+<footer class="bg-gradient-to-b from-primary-500 to-primary-800 text-white py-12 px-4 relative">
+    <div class="absolute inset-0 diagonal-stripes opacity-10"></div>
+    <div class="container mx-auto relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+            <div>
+                <div class="flex items-center space-x-1 mb-4">
+                    <div class="w-30 h-42  flex items-center justify-center ">
+                        <img src="./images/brand-2.png" alt="BD Tech Consulting Logo" class="w-full h-full object-contain"
+                             onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'text-white font-bold\'>BD</span>'">
                     </div>
                 </div>
-                
-                <!-- Quick Links -->
-                <div>
-                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#home" class="text-neutral-200 hover:text-accent-400 transition flex items-center group">
-                            <i class="fas fa-chevron-right text-xs mr-2 group-hover:translate-x-1 transition-transform text-accent-400"></i>Home
-                        </a></li>
-                        <li><a href="#about" class="text-neutral-200 hover:text-accent-400 transition flex items-center group">
-                            <i class="fas fa-chevron-right text-xs mr-2 group-hover:translate-x-1 transition-transform text-accent-400"></i>About Us
-                        </a></li>
-                        <li><a href="#services" class="text-neutral-200 hover:text-accent-400 transition flex items-center group">
-                            <i class="fas fa-chevron-right text-xs mr-2 group-hover:translate-x-1 transition-transform text-accent-400"></i>Services
-                        </a></li>
-                        <li><a href="#training" class="text-neutral-200 hover:text-accent-400 transition flex items-center group">
-                            <i class="fas fa-chevron-right text-xs mr-2 group-hover:translate-x-1 transition-transform text-accent-400"></i>Training
-                        </a></li>
-                        <li><a href="#equipment" class="text-neutral-200 hover:text-accent-400 transition flex items-center group">
-                            <i class="fas fa-chevron-right text-xs mr-2 group-hover:translate-x-1 transition-transform text-accent-400"></i>Equipment
-                        </a></li>
-                        <li><a href="#work" class="text-neutral-200 hover:text-accent-400 transition flex items-center group">
-                            <i class="fas fa-chevron-right text-xs mr-2 group-hover:translate-x-1 transition-transform text-accent-400"></i>Our Work
-                        </a></li>
-                    </ul>
-                </div>
-                
-                <!-- Services -->
-                <div>
-                    <h4 class="text-lg font-bold mb-4">Our Services</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li class="text-neutral-200 hover:text-accent-400 transition cursor-pointer">Enterprise ERP Solutions</li>
-                        <li class="text-neutral-200 hover:text-accent-400 transition cursor-pointer">Data Analytics & AI</li>
-                        <li class="text-neutral-200 hover:text-accent-400 transition cursor-pointer">IT Support & Infrastructure</li>
-                        <li class="text-neutral-200 hover:text-accent-400 transition cursor-pointer">Cloud & Open-Source</li>
-                        <li class="text-neutral-200 hover:text-accent-400 transition cursor-pointer">ICT Strategy & Advisory</li>
-                        <li class="text-neutral-200 hover:text-accent-400 transition cursor-pointer">ICT Training</li>
-                        <li class="text-neutral-200 hover:text-accent-400 transition cursor-pointer">ICT Equipment Supply</li>
-                    </ul>
-                </div>
-                
-                <!-- Contact -->
-                <div>
-                    <h4 class="text-lg font-bold mb-4">Contact Us</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li class="flex items-start">
-                            <i class="fas fa-map-marker-alt text-accent-400 mr-2 mt-1"></i>
-                            <span class="text-neutral-200">Zomba, Malawi</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-envelope text-accent-400 mr-2 mt-1"></i>
-                            <a href="mailto:info@bdtechconsulting.com" class="text-neutral-200 hover:text-accent-400 transition">info@bdtechconsulting.com</a>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-phone text-accent-400 mr-2 mt-1"></i>
-                            <span class="text-neutral-200">+265 XXX XXX XXX</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-clock text-accent-400 mr-2 mt-1"></i>
-                            <span class="text-neutral-200">Mon-Fri: 08:00 - 17:00</span>
-                        </li>
-                    </ul>
+                <p class="text-neutral-200 text-sm mb-4">Malawian ICT Consulting &amp; Technology Services delivering enterprise solutions across Africa.</p>
+                <div class="flex space-x-3">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
-            
-            <!-- Bottom Bar -->
-            <div class="border-t border-white/20 pt-6">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-neutral-200 text-sm text-center md:text-left mb-4 md:mb-0">
-                        © 2023 BD Tech Consulting. All rights reserved.
-                    </p>
-                    <div class="flex flex-wrap gap-4 text-sm">
-                        <a href="#" class="text-neutral-200 hover:text-accent-400 transition">Privacy Policy</a>
-                        <a href="#" class="text-neutral-200 hover:text-accent-400 transition">Terms of Service</a>
-                        <a href="#" class="text-neutral-200 hover:text-accent-400 transition">Sitemap</a>
-                    </div>
+            <div>
+                <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#home"      class="text-neutral-200 hover:text-accent-400 transition flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 group-hover:translate-x-1 transition-transform text-accent-400"></i>Home</a></li>
+                    <li><a href="#about"     class="text-neutral-200 hover:text-accent-400 transition flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 group-hover:translate-x-1 transition-transform text-accent-400"></i>About Us</a></li>
+                    <li><a href="#services"  class="text-neutral-200 hover:text-accent-400 transition flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 group-hover:translate-x-1 transition-transform text-accent-400"></i>Services</a></li>
+                    <li><a href="#training"  class="text-neutral-200 hover:text-accent-400 transition flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 group-hover:translate-x-1 transition-transform text-accent-400"></i>Training</a></li>
+                    <li><a href="#equipment" class="text-neutral-200 hover:text-accent-400 transition flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 group-hover:translate-x-1 transition-transform text-accent-400"></i>Equipment</a></li>
+                    <li><a href="#work"      class="text-neutral-200 hover:text-accent-400 transition flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 group-hover:translate-x-1 transition-transform text-accent-400"></i>Our Work</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-4">Our Services</h4>
+                <ul class="space-y-2 text-sm">
+                    <li class="text-neutral-200 hover:text-accent-400 transition cursor-pointer">Enterprise ERP Solutions</li>
+                    <li class="text-neutral-200 hover:text-accent-400 transition cursor-pointer">Data Analytics &amp; AI</li>
+                    <li class="text-neutral-200 hover:text-accent-400 transition cursor-pointer">IT Support &amp; Infrastructure</li>
+                    <li class="text-neutral-200 hover:text-accent-400 transition cursor-pointer">Cloud &amp; Open-Source</li>
+                    <li class="text-neutral-200 hover:text-accent-400 transition cursor-pointer">ICT Strategy &amp; Advisory</li>
+                    <li class="text-neutral-200 hover:text-accent-400 transition cursor-pointer">ICT Training</li>
+                    <li class="text-neutral-200 hover:text-accent-400 transition cursor-pointer">ICT Equipment Supply</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-4">Contact Us</h4>
+                <ul class="space-y-3 text-sm">
+                    <li class="flex items-start"><i class="fas fa-map-marker-alt text-accent-400 mr-2 mt-1"></i><span class="text-neutral-200">Zomba, Malawi</span></li>
+                    <li class="flex items-start"><i class="fas fa-envelope text-accent-400 mr-2 mt-1"></i><a href="mailto:info@bdtechconsulting.com" class="text-neutral-200 hover:text-accent-400 transition">info@bdtechconsulting.com</a></li>
+                    <li class="flex items-start"><i class="fas fa-phone text-accent-400 mr-2 mt-1"></i><span class="text-neutral-200">+265 XXX XXX XXX</span></li>
+                    <li class="flex items-start"><i class="fas fa-clock text-accent-400 mr-2 mt-1"></i><span class="text-neutral-200">Mon–Fri: 08:00 – 17:00</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-white/20 pt-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-neutral-200 text-sm text-center md:text-left mb-4 md:mb-0">© 2026 BD Tech Consulting. All rights reserved.</p>
+                <div class="flex flex-wrap gap-4 text-sm">
+                    <a href="#" class="text-neutral-200 hover:text-accent-400 transition">Privacy Policy</a>
+                    <a href="#" class="text-neutral-200 hover:text-accent-400 transition">Terms of Service</a>
+                    <a href="#" class="text-neutral-200 hover:text-accent-400 transition">Sitemap</a>
                 </div>
             </div>
         </div>
-    </footer>
-    
-    <script>
-        // Active navigation highlighting
-        function setActiveNav() {
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav-link');
-            
-            let currentSection = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-                    currentSection = section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active-nav');
-                if (link.getAttribute('href') === `#${currentSection}`) {
-                    link.classList.add('active-nav');
-                }
-            });
+    </div>
+</footer>
+
+<script>
+// ── Active nav ──
+function setActiveNav() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    let current = '';
+    sections.forEach(s => {
+        if (scrollY >= s.offsetTop - 100) current = s.id;
+    });
+    navLinks.forEach(l => {
+        l.classList.toggle('active-nav', l.getAttribute('href') === `#${current}`);
+    });
+}
+window.addEventListener('scroll', setActiveNav);
+
+// ── Mobile menu ──
+document.getElementById('menu-btn').addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.toggle('hidden');
+});
+
+// ── Smooth scrolling ──
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+        e.preventDefault();
+        const id = a.getAttribute('href');
+        if (id === '#') return;
+        const el = document.querySelector(id);
+        if (el) {
+            document.getElementById('mobile-menu').classList.add('hidden');
+            window.scrollTo({ top: el.offsetTop - 80, behavior: 'smooth' });
         }
-        
-        window.addEventListener('scroll', setActiveNav);
-        
-        // Mobile menu toggle
-        document.getElementById('menu-btn').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    document.getElementById('mobile-menu').classList.add('hidden');
-                    
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Form submission
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            
-            submitBtn.innerHTML = '<i class="fas fa-check mr-2"></i> Message Sent!';
-            submitBtn.classList.add('opacity-75');
-            
-            this.reset();
-            
-            setTimeout(() => {
-                submitBtn.innerHTML = originalText;
-                submitBtn.classList.remove('opacity-75');
-            }, 3000);
-        });
-        
-        // Initialize ScrollReveal
-        ScrollReveal().reveal('.professional-card', {
-            duration: 600,
-            distance: '20px',
-            origin: 'bottom',
-            interval: 100,
-            opacity: 0
-        });
-        
-        ScrollReveal().reveal('.case-study-card', {
-            duration: 600,
-            distance: '20px',
-            origin: 'bottom',
-            interval: 150,
-            opacity: 0,
-            delay: 200
-        });
-        
-        ScrollReveal().reveal('.testimonial-card', {
-            duration: 600,
-            distance: '20px',
-            origin: 'bottom',
-            interval: 150,
-            opacity: 0,
-            delay: 300
-        });
-    </script>
+    });
+});
+
+// ── Form submit ──
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('button[type="submit"]');
+    btn.innerHTML = '<i class="fas fa-check mr-2"></i>Message Sent!';
+    btn.classList.add('opacity-75');
+    this.reset();
+    setTimeout(() => {
+        btn.innerHTML = '<i class="fas fa-paper-plane mr-2"></i>Send Message';
+        btn.classList.remove('opacity-75');
+    }, 3000);
+});
+
+// ── Intersection Observer for reveal animations ──
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+            const el = entry.target;
+            const delay = el.dataset.delay || 0;
+            setTimeout(() => el.classList.add('revealed'), parseInt(delay));
+            revealObserver.unobserve(el);
+        }
+    });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+// Stagger children cards
+function staggerCards(selector, delayStep = 100) {
+    document.querySelectorAll(selector).forEach((el, i) => {
+        el.dataset.delay = i * delayStep;
+        revealObserver.observe(el);
+    });
+}
+
+document.querySelectorAll('[data-reveal]').forEach(el => revealObserver.observe(el));
+document.querySelectorAll('[data-reveal-left]').forEach(el => revealObserver.observe(el));
+document.querySelectorAll('[data-reveal-right]').forEach(el => revealObserver.observe(el));
+
+// Stagger service cards, case study cards, equipment cards
+staggerCards('.case-study-card', 120);
+staggerCards('.hover-lift', 80);
+
+// ── Typing animation ──
+const typedEl = document.getElementById('hero-typed');
+const words = ['Africa', 'Malawi', 'Your Business', 'the Future'];
+let wi = 0, ci = 0, deleting = false;
+
+function type() {
+    const word = words[wi];
+    if (!deleting) {
+        typedEl.textContent = word.slice(0, ci + 1);
+        ci++;
+        if (ci === word.length) { deleting = true; setTimeout(type, 1800); return; }
+    } else {
+        typedEl.textContent = word.slice(0, ci - 1);
+        ci--;
+        if (ci === 0) { deleting = false; wi = (wi + 1) % words.length; }
+    }
+    setTimeout(type, deleting ? 60 : 100);
+}
+type();
+
+// ── Skill bars (animate on scroll) ──
+const skillBars = document.querySelectorAll('.skill-bar-fill');
+const barObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+        if (e.isIntersecting) {
+            e.target.style.width = e.target.dataset.width;
+            barObserver.unobserve(e.target);
+        }
+    });
+}, { threshold: 0.5 });
+skillBars.forEach(b => barObserver.observe(b));
+</script>
 </body>
 </html>
